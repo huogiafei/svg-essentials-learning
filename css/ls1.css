@@ -1,0 +1,31 @@
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.way-1{
+    background-color: #f66;
+}
+
+.way-2{
+    background: url("../ch02_using_svg/spade.svg") #fc1;
+}
+
+.way-2-1{
+    background-color: transparent;
+    border:10px solid;
+    border-image: url("../ch02_using_svg/spade.svg") 30 stretch;
+}
+
+.way-2-2 li:first-child{
+    list-style-image: url("../ch02_using_svg/spade.svg");
+    padding: 0;
+    list-style-position: inside;
+}
+
+.way-2-2 li{
+    height:30px;
+}
