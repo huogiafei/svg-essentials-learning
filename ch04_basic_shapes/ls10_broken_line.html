@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken-line 折线</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls10.css">
+</head>
+<body>
+<h1 class="title">broken line </h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="5 20, 20 20, 25 10, 35 30, 45 10, 55 30, 65 10, 75 30, 80 20, 95 20"
+                          style="stroke: #0c9; stroke-width: 2; fill: none;"/>
+            </svg>
+        </div>
+        <p class="box-desc">polyline</p>
+    </div>
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="5 20, 20 20, 25 10, 35 30, 45 10, 55 30, 65 10, 75 30, 80 20, 95 20"
+                          style="stroke: #0c9; stroke-width: 2; fill: rgba(0, 204, 153, 0.56);"/>
+            </svg>
+        </div>
+        <p class="box-desc">polyline(fill)</p>
+    </div>
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="5 20, 20 20, 25 10, 35 30, 45 10, 55 30, 65 10, 75 30, 80 20, 95 20"
+                          style="stroke: #0c9; stroke-width: 2; fill: none"
+                          stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <p class="box-desc">stroke-linejoin: round</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="5 20, 20 20, 25 10, 35 30, 45 10, 55 30, 65 10, 75 30, 80 20, 95 20"
+                          style="stroke: #0c9; stroke-width: 2; fill: none"
+                          stroke-linecap="round"/>
+            </svg>
+        </div>
+        <p class="box-desc">stroke-linecap : round</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="5 20, 20 20, 25 10, 35 30, 45 10, 55 30, 65 10, 75 30, 80 20, 95 20"
+                          style="stroke: #0c9; stroke-width: 2; fill: none"
+                          stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <p class="box-desc">final</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="20,70 50,30 80,70" stroke="#09e"
+                          stroke-linejoin="miter" stroke-linecap="square" stroke-width="10"></polyline>
+            </svg>
+        </div>
+        <p class="box-desc">linejoin: miter + linecap :square</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="20,70 50,30 80,70" stroke="#09e"
+                          stroke-linejoin="round" stroke-linecap="round" stroke-width="10"></polyline>
+            </svg>
+        </div>
+        <p class="box-desc">linejoin: round + linecap : round</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="20,70 50,30 80,70" stroke="#09e"
+                          stroke-linejoin="bevel" stroke-linecap="butt" stroke-width="10"></polyline>
+            </svg>
+        </div>
+        <p class="box-desc">linejoin: bevel + linecap : butt</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <polyline points="20,70 50,30 80,70" stroke="#09e"
+                          stroke-linejoin="bevel" stroke-miterlimit="0.1"  stroke-width="10"></polyline>
+            </svg>
+        </div>
+        <p class="box-desc">miterlimit:0.1</p>
+    </div>
+
+</div>
+</body>
+</html>

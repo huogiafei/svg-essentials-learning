@@ -1,0 +1,32 @@
+.card{
+    padding:0 1px 0 0;
+    background: linear-gradient(90deg,#666 1px,transparent 0,transparent 20px) repeat-x left top/20px 100%,
+    linear-gradient(#666 1px,transparent 0,transparent 20px) repeat-y left top/100% 20px;
+}
+
+text{
+    font-size: 12px;
+}
+
+.line{
+    stroke: rgba(255, 204, 17, 0.2);
+}
+
+.line2{
+    stroke:yellow;
+    color: rgb(74, 181, 198);
+}
+
+.line-color{
+    stroke-width: 3px;
+}
+
+.line-opacity{
+    stroke-width: 3px;
+    stroke:#0c9
+}
+
+.line-dasharray{
+    stroke-width: 3px;
+    stroke:#09e
+}

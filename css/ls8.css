@@ -1,0 +1,18 @@
+.card{
+    padding:0 1px 0 0;
+    background: linear-gradient(90deg,#666 1px,transparent 0,transparent 20px) repeat-x left top/20px 100%,
+    linear-gradient(#666 1px,transparent 0,transparent 20px) repeat-y left top/100% 20px;
+}
+
+text{
+    font-size: 12px;
+}
+
+.circle{
+    fill:#f66;
+}
+
+.ellipse{
+    fill: #fc1;
+}
+

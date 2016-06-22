@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreserveAspectRatio 对齐方式</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls3.css">
+</head>
+<body>
+<!-- book demo: http://oreillymedia.github.io/svg-essentials-examples/ch03/meet_slice_specifier.html -->
+<h1 class="title">preserveAspectRatio</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMinYMax meet"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">xMinYmin meet</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMinYMid meet"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">xMinYMid meet</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMinYMin meet"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            </svg>
+
+        </div>
+        <p class="box-desc">xMinYMid meet</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMinYMin slice"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            </svg>
+
+        </div>
+        <p class="box-desc">xMinYMid slice</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMinYMin slice"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            </svg>
+
+        </div>
+        <p class="box-desc">xMidYMid slice</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="100" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMinYMin slice"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
+                <text fill="hsla(0,0%,100%,0.5)" x="20" y="40" style="letter-spacing: 0.2em">123456789</text>
+            </svg>
+
+        </div>
+        <p class="box-desc">xMinYMid slice</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="100" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMidYMin slice"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
+                <text fill="hsla(0,0%,100%,0.5)" x="20" y="40" style="letter-spacing: 0.2em">123456789</text>
+            </svg>
+
+        </div>
+        <p class="box-desc">xMidYMid slice</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="100" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="xMaxYMin slice"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
+                <text fill="hsla(0,0%,100%,0.5)" x="20" y="40" style="letter-spacing: 0.2em">123456789</text>
+            </svg>
+
+        </div>
+        <p class="box-desc">xMaxYMid slice</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="300" viewBox="0 0 100 100"
+                 preserveAspectRatio="none"
+                 style="border: 1px solid yellow;">
+                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
+            </svg>
+
+        </div>
+        <p class="box-desc">none</p>
+    </div>
+</div>
+</body>
+</html>

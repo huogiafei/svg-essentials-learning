@@ -20,12 +20,30 @@
     border-image: url("../ch02_using_svg/spade.svg") 30 stretch;
 }
 
-.way-2-2 li:first-child{
-    list-style-image: url("../ch02_using_svg/spade.svg");
-    padding: 0;
-    list-style-position: inside;
+.way-2-2{
+    background: #fff;
+}
+
+.way-2-2 ul{
+    margin: 0;
+    padding:10px 0 10px 35px;
 }
 
 .way-2-2 li{
-    height:30px;
+    list-style-image:url("../ch02_using_svg/list_tag.svg");
+    padding: 0;
+}
+
+.way-3{
+    background-color: #09e;
+}
+
+.way-4-1 svg{
+    width: 200px;
+    height: 100px;
+}
+
+.way-4-1 .currentLayer path{
+    fill: #f69;
+    stroke: transparent;
 }
