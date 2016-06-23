@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotate 旋转</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls17.css">
+</head>
+<body>
+<!-- http://oreillymedia.github.io/svg-essentials-examples/ch06/rotate.html -->
+<h1 class="title">rotate</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <symbol id="origin" stroke="#f66" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="15 10 15 10">
+                    <polyline points="50 30,50 70"></polyline>
+                    <polyline points="30 50,70 50"></polyline>
+                </symbol>
+                <use xlink:href="#origin"></use>
+            </svg>
+        </div>
+        <p class="box-desc">origin</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#origin" transform="rotate(45)"></use>
+            </svg>
+        </div>
+        <p class="box-desc">rotate(45)</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#origin" transform="rotate(45,50,50)"></use>
+            </svg>
+        </div>
+        <p class="box-desc">rotate(45,50,50)</p>
+    </div>
+
+
+</div>
+</body>
+</html>

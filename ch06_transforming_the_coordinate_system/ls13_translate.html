@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>translate 变换</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls13.css">
+</head>
+<body>
+<!-- book demo: http://oreillymedia.github.io/svg-essentials-examples/ch06/translate.html -->
+<h1 class="title">translate</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect x="1" y="1" width="19" height="9" class="rect"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">origin</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect width="19" height="9" class="rect"
+                      transform="translate(51,51)"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">translate(50,50)</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <symbol id="temp">
+                    <rect x="1" y="1" width="19" height="9" class="rect"
+                    ></rect>
+                </symbol>
+                <use xlink:href="#temp" x="50" y="50"></use>
+            </svg>
+        </div>
+        <p class="box-desc">use + x:50 y:50</p>
+    </div>
+</div>
+</body>
+</html>

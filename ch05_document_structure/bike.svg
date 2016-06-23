@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com"
+     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100" height="100">
+    <title>my vector image</title>
+    <!-- Created with Vector Paint - http://www.vectorpaint.yaks.com/ https://chrome.google.com/webstore/detail/hnbpdiengicdefcjecjbnjnoifekhgdo -->
+    <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="#FFFFFF" stroke="none" class=""/>
+    <g class="currentLayer">
+        <title>Layer 1</title>
+        <path fill="none" fill-opacity="1" stroke="#919191" stroke-opacity="1" stroke-width="2" stroke-dasharray="none"
+              stroke-linejoin="round" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1"
+              marker-start="" marker-mid="" marker-end=""
+              d="M18.38461573421955,60.76923044025898 C18.38461573421955,53.58690999827003 24.202295292230602,47.76923044025898 31.38461573421955,47.76923044025898 C38.5669361762085,47.76923044025898 44.38461573421955,53.58690999827003 44.38461573421955,60.76923044025898 C44.38461573421955,67.95155088224793 38.5669361762085,73.76923044025898 31.38461573421955,73.76923044025898 C24.202295292230602,73.76923044025898 18.38461573421955,67.95155088224793 18.38461573421955,60.76923044025898 z"
+              id="svg_1" class=""/>
+        <path fill="none" fill-opacity="1" stroke="#919191" stroke-opacity="1" stroke-width="2" stroke-dasharray="none"
+              stroke-linejoin="round" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1"
+              marker-start="" marker-mid="" marker-end=""
+              d="M56.5384618639946,40.153845235705376 C56.5384618639946,32.971524793716426 62.356141422005656,27.153845235705376 69.5384618639946,27.153845235705376 C76.72078230598355,27.153845235705376 82.5384618639946,32.971524793716426 82.5384618639946,40.153845235705376 C82.5384618639946,47.336165677694325 76.72078230598355,53.153845235705376 69.5384618639946,53.153845235705376 C62.356141422005656,53.153845235705376 56.5384618639946,47.336165677694325 56.5384618639946,40.153845235705376 z"
+              class="" id="svg_4"/>
+        <path fill="none" stroke="#919191" stroke-width="2" stroke-linejoin="round" stroke-dashoffset=""
+              fill-rule="nonzero" marker-start="" marker-mid="" marker-end="" id="svg_5"
+              d="M31.525002556798576,60.75581442517467 L43.07445103771459,40.544279583570585 L54.6238995186297,60.75581442517467 L31.525002556798576,60.75581442517467 z"
+              style="color: rgb(237, 78, 218);" class=""/>
+        <path fill="none" stroke="#919191" stroke-width="2" stroke-linejoin="round" stroke-dashoffset=""
+              fill-rule="nonzero" marker-start="" marker-mid="" marker-end=""
+              d="M45.3711567101456,59.67889165085978 L56.92060519106161,39.467356809255705 L68.47005367197671,59.67889165085978 L45.3711567101456,59.67889165085978 z"
+              style="color: rgb(237, 78, 218);" class="" id="svg_8"
+              transform="rotate(-180 56.920631408691406,49.57311248779297) "/>
+    </g>
+    <defs>
+        <marker id="DotL" refX="0" refY="0" orient="auto" inkscape:stockid="DotL" overflow="visible">
+            <path transform="scale(.8) translate(7.4 1)"
+                  d="M-2.5-1c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z" fill-rule="evenodd" stroke="#000"
+                  stroke-width="1pt"
+                  style="fill: rgb(145, 145, 145); stroke: rgb(145, 145, 145); stroke-dasharray: none;"/>
+        </marker>
+        <marker id="DotS" refX="0" refY="0" orient="auto" inkscape:stockid="DotS" overflow="visible">
+            <path transform="scale(.2) translate(7.4 1)"
+                  d="M-2.5-1c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z" fill-rule="evenodd" stroke="#000"
+                  stroke-width="1pt"
+                  style="fill: rgb(145, 145, 145); stroke: rgb(145, 145, 145); stroke-dasharray: none;"/>
+        </marker>
+    </defs>
+</svg>

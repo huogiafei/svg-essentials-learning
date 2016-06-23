@@ -1,0 +1,45 @@
+.box {
+    text-align: center;
+}
+
+.card {
+    margin: 0 auto;
+    width: min-content;
+    padding: 0 1px 0 0;
+    background: linear-gradient(90deg, #666 1px, transparent 0, transparent 20px) repeat-x left top/20px 100%,
+    linear-gradient(#666 1px, transparent 0, transparent 20px) repeat-y left top/100% 20px;
+}
+
+text {
+    font-size: 12px;
+    color: rgba(0, 204, 153, 0.48);
+}
+
+.square {
+    position: absolute;
+    color: #fc1;
+    border: 2px solid currentColor;
+    width: 42px;
+    height: 42px;
+    /*left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: -21px;*/
+    top: 80px;
+    left: 80px;
+    transform-origin: 0 0;
+}
+
+.scale{
+    transform:translate(-50%,-50%) scale(2);
+
+    border-width:1px;
+}
+
+.scale2{
+    transform:translate(-75%,-75%) scale(2.5);
+
+    border-width:1px;
+}
+
+

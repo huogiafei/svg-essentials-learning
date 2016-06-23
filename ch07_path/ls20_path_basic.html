@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic path:moveto lineto closepath</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls20.css">
+</head>
+<body>
+<h1 class="title">moveto lineto closepath</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g class="pattern">
+                    <path d="M 10 10 L 30 30"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">M + L</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g class="pattern">
+                    <path d="M 50 10 L 40 30 L 60 30 L 50 10 Z"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">Z</p>
+    </div>
+
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g class="pattern">
+                    <path d="M 50 10 L 40 30 L 60 30 L 50 10 "></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">no Z</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g class="pattern">
+                    <path d="M 50 10 L 40 30 L 60 30 C 0 0 10 20 50 10"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">C</p>
+    </div>
+
+    <!-- 相对于上个点 -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g class="pattern">
+                    <path d="m 50 10 l 10 10 "></path>
+                    <path d="m 70 30 l -20 30 l 20 0 z"></path>
+                    <path d="m 10 10 l 20 0 l 30 70 C 0 0 10 20 10 10"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">relative (m & l)</p>
+    </div>
+</div>
+</body>
+</html>

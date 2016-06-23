@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>centering scale 围绕中心点缩放</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls18.css">
+</head>
+<body>
+<!-- http://oreillymedia.github.io/svg-essentials-examples/ch06/rotate.html -->
+<h1 class="title">centering scale</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <symbol id="origin" stroke="#0c9"
+                        stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <rect width="20" height="20" x="40" y="40"></rect>
+                </symbol>
+                <use xlink:href="#origin"></use>
+                <!-- scale 2 -->
+                <use xlink:href="#origin" transform="translate(-50,-50) scale(2)" stroke-width="0.5"></use>
+                <!-- scale2.5 -->
+                <use xlink:href="#origin" transform="translate(-75,-75) scale(2.5)" stroke-width="0.4"></use>
+            </svg>
+        </div>
+        <p class="box-desc">svg centering scale</p>
+    </div>
+
+    <div class="box">
+        <div class="card" style="width: 200px; height: 200px;position: relative;">
+            <div class="square"></div>
+            <div class="square scale"></div>
+            <div class="square scale2"></div>
+        </div>
+        <p class="box-desc">css (without tf-origin)</p>
+    </div>
+</div>
+</body>
+</html>
