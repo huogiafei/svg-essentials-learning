@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls26.css">
+</head>
+<body>
+<h1 class="title">pattern</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g id="pattern" transform="rotate(45,50,50)">
+                    <path d="m0 0 h100v100h-100v-100" class="pattern-bg"></path>
+                    <path d="M0 50 Q 25 0,50 50 Q 75 100,   100 50" class="pattern-bg2"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="">tile</p>
+    </div>
+
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="tile" x="0" y="0" width="20%" height="20%" patternUnits="objectBoundingBox">
+                        <use xlink:href="#pattern"></use>
+                    </pattern>
+                </defs>
+
+                <rect x="0" y="0" width="100" height="100"
+                      style="fill: url(#tile);"></rect>
+            </svg>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

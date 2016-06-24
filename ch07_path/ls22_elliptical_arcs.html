@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elliptical arcs 椭圆弧</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls22.css">
+</head>
+<body>
+<!-- http://oreillymedia.github.io/svg-essentials-examples/ch07/arc.html -->
+
+<!-- [A,a] , (rx,ry) ,x-axis-rotation , large-arc-flag[0<180,1>180] , sweep-flag[0:负角度，1：正角度] ，end(x,y) -->
+<h1 class="title">elliptical arcs</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M 10,50 A40,20,0 1,1 50,70"></path>
+            </svg>
+        </div>
+        <p class="box-desc">M 10,50 A40,20,0 1,1 50,70</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M 10,50 A40,20,0 0,1 50,70"></path>
+            </svg>
+        </div>
+        <p class="box-desc">M 10,50 A40,20,0 <span class="strong">0</span>,1 50,70</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M 10,50 A40,20,0 1,0 50,70"></path>
+            </svg>
+        </div>
+        <p class="box-desc">M 10,50 A40,20,0,1 ,<span class="strong">0</span> 50,70</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M 10,50 A40,20,0 0,1 90,50"></path>
+            </svg>
+        </div>
+        <p class="box-desc">M 10,50 A40,20,0 ,1 ,1,<span class="strong">90,50</span></p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M 10,50 A40,20,45 0,1 90,50"></path>
+            </svg>
+        </div>
+        <p class="box-desc">M 10,50 A40,20,<span class="strong">45</span> ,1 ,90,50</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g transform="rotate(45,50,50)">
+                    <circle r="40" cx="50" cy="50" stroke="#fff" stroke-width="3px"></circle>
+                    <path d="M 10,50 A20,20,0 0,1 50,50 A20,20,0 0,0 90,50" style="stroke: #fff"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">double arcs</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g>
+                    <path d="M 10,50 A40,40,0 0,1 90,50 " style="stroke: #fff;fill:#f66"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">half circle</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g>
+                    <path d="M 50,10 A40,40,0 0,1 50,90 " style="stroke: #fff;fill:#f66"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">half circle</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g>
+                    <path d="M 10,50 A40,40,0 0,0 90,50 " style="stroke: #fff;fill:#f66"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">half circle</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g>
+                    <path d="M 50,10 A40,40,0 0,0 50,90 " style="stroke: #fff;fill:#f66"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">half circle</p>
+    </div>
+</div>
+</body>
+</html>

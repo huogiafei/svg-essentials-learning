@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>path and fill</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls24.css">
+</head>
+<body>
+<h1 class="title">Path and fill</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="evenodd" fill="rgba(255,255,255,0.2)">
+                <path d="m10 10h80v80h-80v-80 z m30 30h40v40h-40v-40 z" style="fill:rgba(255,255,255,0.5)"></path>
+            </svg>
+        </div>
+        <p class="box-desc">same dir + fill-rule : evenodd</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="nonzero" style="fill:rgba(255,255,255,0.2)">
+                <path d="m10 10h80v80h-80v-80 z m30 30h40v40h-40v-40 z" style="fill:rgba(255,255,255,0.5)"></path>
+            </svg>
+        </div>
+        <p class="box-desc">same dir + fill-rule : nonzero</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="evenodd" fill="rgba(255,255,255,0.2)">
+                <path d="m10 10h80v80h-80v-80 z m30 30 v40h40v-40h-30 z" style="fill:rgba(255,255,255,0.5)"></path>
+            </svg>
+        </div>
+        <p class="box-desc">contrast dir + fill-rule : evenodd</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="nonzero" fill="rgba(255,255,255,0.2)">
+                <path d="m10 10h80v80h-80v-80 z m30 30 v40h40v-40h-30 z" style="fill:rgba(255,255,255,0.5)"></path>
+            </svg>
+        </div>
+        <p class="box-desc">contrast dir + fill-rule : evenodd</p>
+    </div>
+</div>
+</body>
+</html>

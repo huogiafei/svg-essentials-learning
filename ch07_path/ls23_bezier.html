@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bezier 贝塞尔曲线</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls23.css">
+</head>
+<body>
+<!-- refer: http://oreillymedia.github.io/svg-essentials-examples/ch07/quadratic-bezier.html -->
+<h1 class="title">bezier</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M0 50 Q50 -50, 100 50"></path>
+                <path d="M0 50 Q50 0, 100 50"></path>
+                <path d="M0 50 Q50 50, 100 50"></path>
+                <path d="M0 50 Q50 100, 100 50"></path>
+                <path d="M0 50 Q50 150, 100 50"></path>
+            </svg>
+        </div>
+        <p class="box-desc">Quadratic Bézier</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M10 50 Q 30 20,50 50 ,80 90,90 10"></path>
+            </svg>
+        </div>
+        <p class="box-desc">double</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M10 50 Q 30 20,50 50 ,70 30,90 30"></path>
+            </svg>
+        </div>
+        <p class="box-desc">double</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path d="M10 50 Q 30 20,50 50  T 90 30"></path>
+            </svg>
+        </div>
+        <p class="box-desc">T</p>
+    </div>
+    <!-- refer: http://oreillymedia.github.io/svg-essentials-examples/ch07/smooth-quadratic-bezier.html -->
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" stroke-opacity="0.6">
+                <path d="M20 50 C 0 0,100 0  80 50"></path>
+                <path d="M20 50 C 40 -20,60 -20  80 50"></path>
+                <path d="M20 50 C 100 0,0 0  80 50"></path>
+                <path d="M20 50 C 50 0,50 100  80 50"></path>
+                <path d="M20 50 C 100 -100,0 200  80 50"></path>
+            </svg>
+        </div>
+        <p class="box-desc">Cubic Bézier</p>
+    </div>
+    <!-- refer: http://oreillymedia.github.io/svg-essentials-examples/ch07/cubic-bezier.html -->
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" stroke-opacity="0.6">
+                <path d="M60 0 c -65 0 ,-65 100 0 100 s 10 -20 0 -20 s 0 -70 40 -40 z"></path>
+            </svg>
+        </div>
+        <p class="box-desc">Cubic Bézier</p>
+    </div>
+</div>
+</body>
+</html>
