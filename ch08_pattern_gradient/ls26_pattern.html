@@ -12,32 +12,121 @@
 <div class="wrap">
     <div class="box">
         <div class="card">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <path d="M 0 0 L 20 0 L 20 20 L 0 20 Z" class="pattern-bg"></path>
+                <path d="M 0 10 Q 5 0,10 10 Q 25 20, 20 10" class="pattern-bg2"></path>
+
+                <!-- pattern 1 -->
+                <defs>
+                    <pattern id="tile" x="0" y="0" width="20%" height="20%"
+                             patternUnits="userSpaceOnUse">
+                        <path d="M 0 0 L 20 0 L 20 20 L 0 20 Z" class="pattern-bg"></path>
+                        <path d="M 0 10 Q 5 0,10 10 Q 15 20, 20 10" stroke="#09c" class="pattern-bg2"></path>
+                    </pattern>
+                </defs>
+
+                <!-- pattern 2 -->
+                <defs>
+                    <pattern id="tile2" x="0" y="0" width="20%" height="20%"
+                             patternUnits="objectBoundingBox">
+                        <path d="M 0 0 Q 5 20 10 10 T 20 20"
+                              style="stroke: black; fill: none;"/>
+                        <path d="M 0 0 h 20 v 20 h -20 z"
+                              style="stroke: gray; fill: none;"/>
+                    </pattern>
+                </defs>
+            </svg>
+        </div>
+        <p class="box-desc">Tile</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
-                <g id="pattern" transform="rotate(45,50,50)">
-                    <path d="m0 0 h100v100h-100v-100" class="pattern-bg"></path>
-                    <path d="M0 50 Q 25 0,50 50 Q 75 100,   100 50" class="pattern-bg2"></path>
+                <rect x="0" y="0" width="100" height="100"
+                      style="fill: url(#tile2); stroke: black;"/>
+                <!-- <rect x="135" y="20" width="70" height="80"
+                       style="fill: url(#tile2); stroke: black;"/>
+                 <rect x="220" y="20" width="150" height="130"
+                       style="fill: url(#tile2); stroke: black;"/>-->
+            </svg>
+        </div>
+        <div class="box-desc">pattern1</div>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect x="0" y="0" width="100" height="100"
+                      style="fill: url(#tile);"/>
+            </svg>
+        </div>
+        <div class="box-desc">pattern2</div>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="150" height="150" viewBox="0 0 100 100">
+                <rect x="0" y="0" width="100" height="100"
+                      style="fill: url(#tile);"/>
+            </svg>
+        </div>
+        <div class="box-desc">pattern2</div>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="250" height="150" viewBox="0 0 100 100">
+                <rect x="0" y="0" width="100" height="100"
+                      style="fill: url(#tile);"/>
+            </svg>
+        </div>
+        <div class="box-desc">pattern2</div>
+    </div>
+
+
+    <!-- PatternContentUnits -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="tile4"
+                             patternUnits="objectBoundingBox"
+                             patternContentUnits="objectBoundingBox"
+                             x="0" y="0" width=".2" height=".2">
+                        <path d="M 0 0 Q .05 .20 .10 .10 T .20 .20"
+                              style="stroke: black; fill: none; stroke-width: 0.01;"/>
+                        <path d="M 0 0 h 0.2 v 0.2 h-0.2z"
+                              style="stroke: black; fill: none; stroke-width: 0.01;"/>
+                    </pattern>
+                </defs>
+
+                <g transform="translate(20, 20)">
+                    <rect x="0" y="0" width="100" height="100"
+                          style="fill: url(#tile4);"/>
                 </g>
             </svg>
         </div>
-        <p class="">tile</p>
     </div>
-
 
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
                 <defs>
-                    <pattern id="tile" x="0" y="0" width="20%" height="20%" patternUnits="objectBoundingBox">
-                        <use xlink:href="#pattern"></use>
+                    <pattern id="tile5"
+                             patternUnits="userSpaceOnUse"
+                             x="0" y="0" width="20" height="20"
+                             viewBox="0 0 150 150">
+                        <path d="M30 100 C 50 50, 70 20, 100 100,
+ 110, 130, 45, 150, 65, 100"
+                              style="stroke: black; stroke-width: 5; fill: none;"/>
                     </pattern>
                 </defs>
-
-                <rect x="0" y="0" width="100" height="100"
-                      style="fill: url(#tile);"></rect>
+                <rect x="20" y="20" width="100" height="100"
+                      style="fill: url(#tile5); stroke: black;"/>
             </svg>
         </div>
     </div>
-
 
 </div>
 </body>

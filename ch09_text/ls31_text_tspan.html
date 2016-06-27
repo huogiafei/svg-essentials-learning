@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tspan</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls31.css">
+</head>
+<body>
+<h1 class="title">Text align</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="200" viewBox="0 0 200 100" fill="#ccc">
+                <text x="10" y="30" style="font-size: 12px">
+                    等：
+                    <tspan style="fill:#f66;">莫道</tspan>
+                    你在选择人,
+                </text>
+                <text x="10" y="50" style="font-size: 12px">
+                    <tspan style="font-weight: bold;">人&nbsp &nbsp</tspan>
+                    亦能选择
+                    <tspan style="font-style: italic;fill: none;stroke: #09e;stroke-width: 0.5">你</tspan>
+                </text>
+                <text x="190" y="80" style="font-size: 12px;text-anchor: end">
+                    <tspan style="font-weight: bold;">Danny</tspan>
+                    <tspan style="fill: #8163ff;">陈百强</tspan>
+                </text>
+            </svg>
+        </div>
+        <p class="box-desc">tspan</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="200" viewBox="0 0 200 100" fill="#ccc">
+                <text x="10" y="30" style="font-size: 12px">
+                    <tspan style="fill:#79f3ff;">苦涩</tspan>
+                    <tspan style="fill:#c3cdff;" dy="6">慢慢</tspan>
+                    <tspan style="fill:#f4d9ff;" dy="8">向着</tspan>
+                    <tspan style="fill:#ffcfde;" dy="10">心里渗</tspan>
+                </text>
+                <text x="10" y="70" style="font-size: 12px">
+                    <tspan style="fill:#35222e;" x="20" y="90">何必</tspan>
+                    <tspan style="fill:#545770;" dx="100" dy="-70">抱怨</tspan>
+                    <tspan style="fill:#70393e;" x="100" y="80" rotate="180">曾令醉心是谁人</tspan>
+                </text>
+            </svg>
+        </div>
+        <p class="box-desc">absoulte(dy + dx + x + y)</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="200" viewBox="0 0 200 100" fill="#ccc">
+                <text x="100" y="50" style="fill:#eee; font-size: 14px; text-anchor: middle;
+                text-shadow: 0 0 2px hsla(0,0%,100%,0.9)">
+                    C
+                    <tspan style="baseline-shift: sub;font-size: 8px">16</tspan>
+                    H
+                    <tspan style="baseline-shift: sub;font-size: 8px">13</tspan>
+                    ClN
+                    <tspan style="baseline-shift: sub;font-size: 8px">20</tspan>
+                </text>
+            </svg>
+        </div>
+        <p class="box-desc">baseline-shift</p>
+    </div>
+
+</div>
+</body>
+</html>

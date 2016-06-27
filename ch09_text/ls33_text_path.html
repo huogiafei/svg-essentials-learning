@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Path</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls33.css">
+</head>
+<body>
+<!-- http://oreillymedia.github.io/svg-essentials-examples/ch09/text_path.html -->
+<h1 class="title">Path</h1>
+<div class="wrap">
+
+
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="200" viewBox="0 0 200 100" fill="#ccc">
+                <!-- paths -->
+                <defs>
+                    <path id="path-1" d="m20 20 h60v60" class="path"></path>
+                    <path id="path-2" d="m120 20 h60v60" class="path"></path>
+                </defs>
+
+                <g x="10" y="10">
+                    <use xlink:href="#path-1"></use>
+                    <text class="text">
+                        <textPath xlink:href="#path-1">Making a quick turn</textPath>
+                    </text>
+                </g>
+
+                <g x="60" y="10">
+                    <use xlink:href="#path-2"></use>
+                    <text class="text" style="text-anchor:middle">
+                        <textPath xlink:href="#path-2" startOffset="10%">Making a quick turn</textPath>
+                    </text>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">startOffset + text-anchor</p>
+    </div>
+
+    <!-- <path d="M10 50 Q 30 20,50 50 ,80 90,90 10"></path> -->
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="200" viewBox="0 0 200 100" fill="#ccc">
+                <defs>
+                    <path id="path-3" d="M10 50 Q 30 20,50 50 ,80 90,90 10"></path>
+                    <path id="path-4"  transform="translate(100,0)"  d="M50 10 Q 100 50,50 90 , Q 0 50,50 10"></path>
+                </defs>
+
+
+
+                <g style="font-size: 10px; fill: #0c9;">
+                    <text>
+                        <textPath xlink:href="#path-3" startOffset="10%">Making a quick turn</textPath>
+                    </text>
+                </g>
+
+                <g style="font-size: 10px; fill: #0c9;">
+                    <text >
+                        <textPath xlink:href="#path-4">abcdefghijklmnopqrstuvwxyz</textPath>
+                    </text>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">bezier path</p>
+    </div>
+
+</div>
+</body>
+</html>

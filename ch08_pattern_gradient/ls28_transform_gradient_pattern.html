@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradientTransform & patternTransform</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls28.css">
+</head>
+<body>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch08/pattern_gradient_transform.html -->
+<h1 class="title">GradientTransform & patternTransform</h1>
+<div class="wrap">
+
+    <svg width="200" height="200" viewBox="0 0 100 100">
+        <defs>
+            <!-- gradient -->
+            <linearGradient id="plain">
+                <stop offset="0%" style="stop-color:#0c9"></stop>
+                <stop offset="100%" style="stop-color:#09e"></stop>
+            </linearGradient>
+
+            <!-- pattern -->
+            <pattern id="tile" x="0" y="0" width="20%" height="20%"
+                     patternUnits="userSpaceOnUse" fill="none" stroke="#fc1">
+                <path d="M 0 0 L 20 0 L 20 20 L 0 20 Z" class="pattern-bg"></path>
+                <path d="M 0 10 Q 5 0,10 10 Q 15 20, 20 10" stroke="#09c" class="pattern-bg2"></path>
+            </pattern>
+
+
+            <linearGradient xlink:href='#plain' id="skewLg" gradientTransform="skewX(40)"></linearGradient>
+            <linearGradient xlink:href='#plain' id="rotateLg" gradientTransform="rotate(120)"></linearGradient>
+            <linearGradient xlink:href='#plain' id="scaleLg" gradientTransform="scale(2)"></linearGradient>
+            <linearGradient xlink:href='#plain' id="translateLg" gradientTransform="translateY(100)"></linearGradient>
+
+            <pattern xlink:href="#tile" id="noSkewed"></pattern>
+            <pattern xlink:href="#tile" id="skewed" patternTransform="skewY(30)"></pattern>
+            <pattern xlink:href="#tile" id="scale" patternTransform="scale(0.5)"></pattern>
+            <pattern xlink:href="#tile" id="rotate" patternTransform="rotate(90)"></pattern>
+        </defs>
+
+
+
+
+    </svg>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect fill="url(#noSkewed)" width="50" height="50" x="0" y="0"></rect>
+                <rect fill="url(#skewed)" width="50" height="50" x="50" y="0"></rect>
+                <rect fill="url(#scale)" width="50" height="50" x="0" y="50"></rect>
+                <rect fill="url(#rotate)" width="50" height="50" x="50" y="50"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">patternTransform(skew +scale +rotate)</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect fill="url(#skewLg)" width="50" height="50" x="0" y="0" stroke="yellow"></rect>
+                <rect fill="url(#rotateLg)" width="50" height="50" x="50" y="0" stroke="yellow"></rect>
+                <rect fill="url(#scaleLg)" width="50" height="50" x="0" y="50" stroke="yellow"></rect>
+                <rect fill="url(#translateLg)" width="50" height="50" x="50" y="50" stroke="yellow"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">gradientTransform(skew +scale +rotate + translate)</p>
+    </div>
+</div>
+</body>
+</html>

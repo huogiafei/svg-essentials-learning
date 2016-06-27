@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text align</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls30.css">
+</head>
+<body>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch09/text_alignment.html -->
+<h1 class="title">Text align</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <g style="font-size:14pt" fill="#0c9">
+                    <path d="m50 0v100" stroke="#ccc"></path>
+                    <text x="50" y="30" style="text-anchor:start">Start</text>
+                    <text x="50" y="60" style="text-anchor:middle">Middle</text>
+                    <text x="50" y="90" style="text-anchor:end">End</text>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">Text-anchor</p>
+    </div>
+</div>
+</body>
+</html>
