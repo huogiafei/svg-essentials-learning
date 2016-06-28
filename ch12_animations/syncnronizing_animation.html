@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronizing animation</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<h1 class="title">Synchronizing animation</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <circle cx="0" cy="50" r="10"  fill="#fc1">
+                    <animate id="c1" attributeName="cx" attributeType="XML"
+                            to="20" begin="0s" dur="1s" fill="freeze" />
+                </circle>
+
+                <circle cx="40" cy="50" r="10"  fill="#fc1">
+                    <animate id="c2" attributeName="cx" attributeType="XML"
+                              to="60" begin="c1.end" dur="1s" fill="freeze" />
+                </circle>
+
+                <circle cx="80" cy="50" r="10"  fill="#fc1">
+                    <animate id="c3" attributeName="cx" attributeType="XML"
+                            to="100" begin="c2.end" dur="1s" fill="freeze" />
+                </circle>
+            </svg>
+        </div>
+        <p class="box-desc">synchronizing</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <circle cx="0" cy="50" r="10"  fill="#fc1">
+                    <animate id="c1" attributeName="cx" attributeType="XML"
+                             to="20" begin="0s" dur="1s" fill="freeze" />
+                </circle>
+
+                <circle cx="40" cy="50" r="10"  fill="#fc1">
+                    <animate id="c2" attributeName="cx" attributeType="XML"
+                             to="60" begin="c1.end + 0.5s" dur="1s" fill="freeze" />
+                </circle>
+
+                <circle cx="80" cy="50" r="10"  fill="#fc1">
+                    <animate id="c3" attributeName="cx" attributeType="XML"
+                             to="100" begin="c2.end + 1s" dur="1s" fill="freeze" />
+                </circle>
+            </svg>
+        </div>
+        <p class="box-desc">synchronizing + delay</p>
+    </div>
+</div>
+</body>
+</html>

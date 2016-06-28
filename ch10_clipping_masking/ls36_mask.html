@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mask</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ls36.css">
+</head>
+<body>
+<h1 class="title">Mask</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <mask id="redMask" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:red"></rect>
+                    </mask>
+
+                    <mask id="greenMask" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:green"></rect>
+                    </mask>
+
+                    <mask id="blueMask" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:blue"></rect>
+                    </mask>
+
+                    <mask id="whiteMask" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:white"></rect>
+                    </mask>
+                </defs>
+
+                <!-- origin -->
+                <rect x="0" y="0" width="25" height="25" style="fill:red"></rect>
+                <rect x="25" y="0" width="25" height="25" style="fill:green"></rect>
+                <rect x="50" y="0" width="25" height="25" style="fill:blue"></rect>
+                <rect x="75" y="0" width="25" height="25" style="fill:white"></rect>
+
+                <!-- mask -->
+                <g style="mask: url(#redMask);text-anchor: middle;font-size: 8px">
+                    <circle cx="12.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="12.5" y="75">red</text>
+                </g>
+
+                <g style="mask: url(#greenMask);text-anchor: middle;font-size: 8px">
+                    <circle cx="37.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="37.5" y="75">green</text>
+                </g>
+
+                <g style="mask: url(#blueMask);text-anchor: middle;font-size: 8px">
+                    <circle cx="62.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="62.5" y="75">blue</text>
+                </g>
+
+                <g style="mask: url(#whiteMask);text-anchor: middle;font-size: 8px">
+                    <circle cx="87.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="87.5" y="75">white</text>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">Color Mask</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <mask id="full" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:white"></rect>
+                    </mask>
+
+                    <mask id="three-fourths" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:white;fill-opacity: .75"></rect>
+                    </mask>
+
+                    <mask id="one-half" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:white;fill-opacity: .5"></rect>
+                    </mask>
+
+                    <mask id="one-fourth" x="0" y="0" width="1" height="1"
+                          maskContentUnits="objectBoundingBox">
+                        <rect x="0" y="0" width="1" height="1" style="fill:white;fill-opacity: .25"></rect>
+                    </mask>
+                </defs>
+
+                <!-- mask -->
+                <g style="mask: url(#full);text-anchor: middle;font-size: 8px">
+                    <circle cx="12.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="12.5" y="75">100%</text>
+                </g>
+
+                <g style="mask: url(#three-fourths);text-anchor: middle;font-size: 8px">
+                    <circle cx="37.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="37.5" y="75">75%</text>
+                </g>
+
+                <g style="mask: url(#one-half);text-anchor: middle;font-size: 8px">
+                    <circle cx="62.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="62.5" y="75">50%</text>
+                </g>
+
+                <g style="mask: url(#one-fourth);text-anchor: middle;font-size: 8px">
+                    <circle cx="87.5" r="12.5" cy="50" style="fill: black"></circle>
+                    <text x="87.5" y="75">25%</text>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">fill-opacity</p>
+    </div>
+
+    <!-- practice -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <radialGradient id="fade">
+                        <stop offset="0%" style="stop-color: white;stop-opacity:1"></stop>
+                        <stop offset="70%" style="stop-color: white;stop-opacity:1"></stop>
+                        <stop offset="100%" style="stop-color: white;stop-opacity:0"></stop>
+                    </radialGradient>
+
+                    <mask id="fademask" maskContentUnits="objectBoundingBox">
+                        <!--<circle r="50" cx="50" cy="50" style="fill: url(#fade)"></circle>-->
+                        <rect width="1" height="1" x="0" y="0" style="fill:url(#fade)"></rect>
+                    </mask>
+                </defs>
+
+                <image x="10" y="10" xlink:href="cd_cover.jpg" width="80" height="80"
+                       style="mask: url(#fademask)"></image>
+
+            </svg>
+        </div>
+        <p class="box-desc">practice</p>
+    </div>
+</div>
+</body>
+</html>

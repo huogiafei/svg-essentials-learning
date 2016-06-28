@@ -5,15 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clipPath</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../css/ls35.css">
 </head>
 <body>
 <!-- Refer:http://oreillymedia.github.io/svg-essentials-examples/ch10/clip_path.html -->
+<h1 class="title">ClipPath</h1>
 <div class="wrap">
     <div class="box">
         <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs stroke="none">
+                    <clipPath id="starClip">
+                        <polygon id="star" points="50,10 25,90 90,40 10,40 75,90" class="star"/>
+                    </clipPath>
 
+                    <radialGradient id="gradient" cx="50%" cy="50%" r="58%">
+                        <stop offset="0%" style="stop-color:#fc1"></stop>
+                        <stop offset="50%" style="stop-color:#f66"></stop>
+                        <stop offset="100%" style="stop-color:#09e"></stop>
+                    </radialGradient>
+                </defs>
+
+                <use xlink:href="#star" fill="none" stroke="#eee" stroke-dasharray="2 5"></use>
+                <rect style="fill: url(#gradient);fill-opacity:0.7;"
+                      width="100" height="100" ></rect>
+            </svg>
         </div>
+        <p class="box-desc">origin</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs stroke="none">
+                    <clipPath id="starClip">
+                        <polygon points="50,10 25,90 90,40 10,40 75,90" class="star"/>
+                    </clipPath>
+
+                    <radialGradient id="gradient" cx="50%" cy="50%" r="58%">
+                        <stop offset="0%" style="stop-color:#fc1"></stop>
+                        <stop offset="50%" style="stop-color:#f66"></stop>
+                        <stop offset="100%" style="stop-color:#09e"></stop>
+                    </radialGradient>
+                </defs>
+
+                <rect style="fill: url(#gradient);fill-opacity:0.7;clip-path: url(#starClip)"
+                      width="100" height="100" ></rect>
+            </svg>
+        </div>
+        <p class="box-desc">clipPath</p>
+    </div>
+
+    <!-- Refers: http://oreillymedia.github.io/svg-essentials-examples/ch10/complex_clip_path.html -->
+
+    <!-- more complex -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="url(#bgRg)" style="clip-path: url(#ellipsePath)"></rect>>
+                <rect width="85" height="3" rx="2" ry="2" x="7" y="68" transform="rotate(45,50,50)" style="fill:#963849;fill-opacity: 0.8" ></rect>
+                <rect width="100" height="100" fill="url(#textTile)" style="clip-path: url(#textPath)"></rect>
+                <defs>
+                    <pattern id="textTile" x="0" y="0" width="10%" height="10%"
+                             patternUnits="userSpaceOnUse">
+                        <rect width="5" height="5" rx="1" ry="1" style="fill:#4b524e" fill-opacity="0.8"></rect>
+                        <rect width="5" height="5" rx="1" ry="1" style="fill:rgba(45, 45, 45, 0.74)" x="5" y="5" fill-opacity="0.7"></rect>
+                    </pattern>
+
+                    <radialGradient id="bgRg" cx="50%" cy="50%"   r="58%">
+                        <stop offset="10%" style="stop-color:#eee"></stop>
+                        <stop offset="80%" style="stop-color:#95ffd9"></stop>
+                    </radialGradient>
+
+                    <clipPath id="textPath">
+                        <text style="font-size: 48px;font-weight: bold;"
+                             transform="rotate(45,50,50)" x="51" y="65" text-anchor="middle">Beer</text>
+                    </clipPath>
+
+                    <clipPath id="ellipsePath">
+                        <ellipse rx="70" ry="40" cx="50" cy="52" transform="rotate(45,50,50)"></ellipse>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <p class="box-desc">text pattern + text clipPath</p>
     </div>
 </div>
 </body>

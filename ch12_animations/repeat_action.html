@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeat animation</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch12/sync_repetition.html -->
+<h1 class="title">Repeat Action</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="20" fill="#0c9" stroke="#666" stroke-width="1">
+                    <animate attributeName="stroke-width" attributeType="XML"
+                             begin="0s" dur="5s" repeatCount="indefinite"
+                             from="1" to="10" fill="remove"/>
+                </circle>
+            </svg>
+        </div>
+        <p class="box-desc"repeatCount</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="20" fill="#0c9" stroke="#666" stroke-width="1">
+                    <animate attributeName="stroke-width" attributeType="XML"
+                             begin="0s" dur="5s" repeatDur="2s"
+                             from="1" to="10" fill="freeze"/>
+                </circle>
+            </svg>
+        </div>
+        <p class="box-desc">repeatDur</p>
+    </div>
+</div>
+</body>
+</html>
