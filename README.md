@@ -24,7 +24,88 @@ SVG Essentials learning
 
 **CH02 使用SVG**
 
-　　介绍了使用svg的四种方法:img，background,
+　　介绍了使用svg的四种方法:
 
-　　
+- img
+- css(background,list-image,border-image)
+- object
+- inline svg,见一些国外网站用把svg放在symbol里通过use进行icon的复用
+
+**CH03 坐标系统**
+
+　　svg相当于画布，下面是一些基本属性
+
+- width/height 画布的大小
+- viewBox
+- preserveAspectRatio,当w/h 和 viewBox 宽高比不一样，需要指定对齐方式
+- meet/slice 同上，需要指定适配边缘还是裁剪
+
+**CH04 基本形状**
+
+- line线段，需要起点和终点（x1,y1,x2,y2）
+- fill 填充颜色
+- fill-opacity 填充透明度
+- stroke-width 笔尖粗细，原谅我写的接地气一点
+- stroke 笔画颜色，注意不是stroke-color，支持rgba,rgb,hsl,hsla颜色格式，默认是none
+- stroke-opacity 笔画透明度
+- stroke-dasharray，实现点线、虚线（线长度，空隙长），css secrets里面还利用这个属性实现饼图
+- rect（x,y,width,height,rx,ry）,除了必须参数起点坐标和宽高外，还可以设置rx/ry得到圆角矩形
+- circle (cx,cy,r)，需要圆心坐标和半径
+- ellipse (cx,cy,rx,ry) 跟circle基本一样，除了r分成了rx和ry
+- polygon (xi,yi) 一系列的x/y坐标，最后会自动回到起始坐标
+- fill-rule填充规则，nonzero(default)/evenodd
+- polygon折线 ，和polygon的区别在于不闭合为形状
+- stroke-linecap线的端点，三个值分别为square,round,butt,前两者在端点位置增加一个形状
+- stroke-linejoin 折线位置的形状，有三个值为miter(尖)，round(圆),bevel(平)
+
+**CH05 文档解构**
+
+- svg中使用样式：
+ - inline
+ - internal stylesheets
+ - external stylesheets
+ - Presentation Attributes，我的理解是直接去掉style的内联写法，不过因为优先级是最低。
+- g 把子元素作为一个组合
+- defs 定义一个组合，只定义不显示
+- symbol 加强版defs，指定viewBox和preserveAspectRatio属性
+- use 重用上面三个定义的图形 (xlink:href)，可以指定图形位置
+- image 支持jpg和png
+
+**CH06 坐标系统变换**
+
+- translate 移动整个坐标系统，和x='10',y='10'这种单独移动画布里元素不一样
+- scale 坐标系统缩放，所以会影响元素的坐标和stroke-width
+- transform order 这点和css一样，各种变换的顺序会影响最后变换效果
+- 笛卡尔坐标变换 水平翻转和垂直翻转，同样适用css transform
+- rotate 默认旋转中心为0,0,rotate(deg,50,50)可以围绕中心点旋转
+- 围绕中心点缩放 ,translate(-centerX*(n-1), -centerY*(n-1)) scale(n)
+- skewX/skewY
+
+**CH07 路径**
+
+ 　　**所有基本形状都是path元素的简写形式**
+ 
+- M(moveto) 起始位置 
+- L(lineto) 连线到
+- Z(closepath) 关闭路径
+- m/l/z(相对位置) 其实只有l是相对于上一个坐标定位,m和z都是和大写字母的效果一样
+- H/V(h/v) 绘制水平/垂直线，小写是相对坐标，这两个字母属于lineto的快捷方式
+- A(a) 弧线(rx,ry,x-axis-rotation,large-arc-flag,sweep-flag,endX,endY)，解释一下7个参数：
+ - 椭圆的x轴半径和y轴半径
+ - x轴旋转角度
+ - 圆弧角度大于180度，为0,小于180度，为1
+ - 负角度绘制为0 ，正角度为1，我的理解是顺/逆时针
+ - 终点X y
+- Q(q) 二次贝塞尔曲线,(Q hx hy,ex,ey),Q后面跟着一个控制点和下一个点
+- T(t) 多边二次贝塞尔，自动计算控制点，只需要后面跟着下一个点 
+- C(c) 三次贝塞尔曲线，和二次贝塞尔曲线比较，每个端点对于于一个控制点，就是一条线段有两个控制点
+- S(s) 和T作用类似，自动算出平滑曲线 
+- marker
+ - markerWidth/markerHeight 
+ - marker-start/marker-mid/marker-end marker放置位置
+ - orient marker跟随路径方向
+ 
+ 
+
+
 
