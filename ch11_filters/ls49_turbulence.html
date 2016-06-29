@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feTurbulence</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<!-- Refers: http://oreillymedia.github.io/svg-essentials-examples/ch11/turbulence.html -->
+<h1 class="title">feTurbulence</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+               <!-- <use xlink:href="#icon-clock2" filter="url(#turb-filter)"></use>-->
+                <rect width="80" height="80" x="10" y="10"  filter="url(#turb-filter)"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">normal</p>
+    </div>
+
+
+    <!-- filter -->
+    <svg class="hidden">
+        <defs>
+            <filter id="turb-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.1"
+                              numOctaves="0.1" in="SourceGraphic"></feTurbulence>
+            </filter>
+
+            <filter id="turb-filter2">
+                <feTurbulence type="turbulence" baseFrequency="0.1"
+                              numOctaves="0.5" seed="0.5" in="SourceGraphic"></feTurbulence>
+            </filter>
+
+            <symbol id="icon-clock2" viewBox="0 0 16 16">
+                <title>clock2</title>
+                <path class="path1" d="M8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM10.293 11.707l-3.293-3.293v-4.414h2v3.586l2.707 2.707-1.414 1.414z"></path>
+            </symbol>
+        </defs>
+    </svg>
+</div>
+
+
+</body>
+</html>

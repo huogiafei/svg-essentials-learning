@@ -105,6 +105,37 @@ SVG Essentials learning
  - marker-start/marker-mid/marker-end marker放置位置
  - orient marker跟随路径方向
  
+**CH08 图案和渐变**
+
+pattern:
+
+- patternUnits(objectBoundingBox/userSpaceOnUse)
+- patternContentUnits
+
+gradient
+
+- linearGradient 
+- radialGradient
+- spreadMethod 
+ - pad 起始和结束渐变点会扩展到对象的边缘
+ - repeat 渐变会重复起点到终点的过程
+ - reflect 渐变会按终点到起点、起点到终点的排列重复
+ 
+**CH09 文本**
+ 
+- 基本属性（和css相对应）：font-family,font-size,font-weight,font-style,text-decoration
+    word-spacing,letter-spacing
+- text-anchor(文本对齐) start/middle/end
+- tspan类似于p里面的span标签，有偏移量（dx,dy）和baseline-shift（sub,super）两个属性
+- textLength 设置文本长度 ，lengthAdjust可以调整字符间距
+ - spacing 调整字符间距
+ - spacingAndGlyphs 字符长度和字符间距
+- textPath 文本路径
+
+**CH10 裁剪和蒙版**
+
+-clipPath 和 clip-path
+
  
 
 
