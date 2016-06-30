@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animating svg with css</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        @keyframes start-ani {
+            0%{
+                fill-opacity: 1.0;
+                stroke-width: 0;
+            }
+            100%{
+                fill-opacity: 0;
+                stroke-width: 6;
+            }
+        }
+
+        @keyframes start-ani-2 {
+            0% {
+                fill-opacity: 1.0;
+                stroke-width: 0;
+            }
+            20% {
+                transform: translate(100px, 90px)
+            }
+            50% {
+                transform: translate(100px, 90px) rotate(180deg)
+            }
+            80% {
+                transform: translate(100px, 90px) rotate(360deg)
+            }
+            100% {
+                fill-opacity: 0.0;
+                stroke-width: 6;
+            }
+        }
+
+        #star{
+            animation: start-ani 3s ease both infinite alternate;
+        }
+
+        #star2{
+            animation: start-ani-2 3s ease both infinite alternate;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">keyPoints & keyTimes</h1>
+<div class="wrap">
+    <!-- Refers : http://oreillymedia.github.io/svg-essentials-examples/ch12/svg_css_anim1.html -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <defs>
+                    <g id="starDef">
+                        <path d="M 38.042 -12.361 9.405 -12.944 -0.000 -40.000 -9.405 -12.944 -38.042 -12.361 -15.217 4.944 -23.511 32.361 0.000 16.000 23.511 32.361 15.217 4.944 Z"></path>
+                    </g>
+                </defs>
+                <use id="star" class="starStyle" xlink:href="#starDef"
+                     transform="translate(100, 100)"
+                     style="fill: #f73; stroke: #f73"/>
+            </svg>
+        </div>
+        <p class="box-desc">keyPoints & keyTimes</p>
+    </div>
+
+    <!-- Refer : http://oreillymedia.github.io/svg-essentials-examples/ch12/svg_css_anim2.html -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <defs>
+                    <g id="starDef">
+                        <path d="M 38.042 -12.361 9.405 -12.944 -0.000 -40.000 -9.405 -12.944 -38.042 -12.361 -15.217 4.944 -23.511 32.361 0.000 16.000 23.511 32.361 15.217 4.944 Z"></path>
+                    </g>
+                </defs>
+                <use id="star2" class="starStyle" xlink:href="#starDef"
+                     transform="translate(100, 100)"
+                     style="fill: #ff3f3c; stroke: #ff3f3c"/>
+            </svg>
+        </div>
+        <p class="box-desc">keyPoints & keyTimes</p>
+    </div>
+</div>
+</body>
+</html>

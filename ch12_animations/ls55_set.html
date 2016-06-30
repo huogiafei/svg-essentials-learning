@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch12/animation_set.html -->
+<h1 class="title">Set</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <text text-anchor="middle" x="50" y="55" style="opacity:0;font-size: 14px;fill: #fc1">
+                    <set attributeName="opacity" attributeType="CSS" to="1" begin="4s" dur="1s"
+                         fill="freeze"></set>
+                    Hello
+                </text>
+                <circle cx="50" cy="50" r="50" style="fill: #09e">
+                    <animate id="c1" attributeName="r" dur="4s" to="0" fill="freeze"></animate>
+                </circle>
+
+            </svg>
+        </div>
+        <p class="box-desc">Set</p>
+    </div>
+</div>
+</body>
+</html>

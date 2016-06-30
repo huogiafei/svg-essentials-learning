@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animateMotion</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .clock-bg{
+            fill: #222;
+        }
+
+        .clock-track {
+            stroke-width: 2;
+            stroke: #008d8a;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .clock-point {
+            fill: #fff;
+        }
+    </style>
+</head>
+<body>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch12/animate_transform.html -->
+<h1 class="title">animateMotion</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#a1"></use>
+            </svg>
+        </div>
+        <p class="box-desc">animateMotion : line</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#a2"></use>
+            </svg>
+        </div>
+        <p class="box-desc">animateMotion : rect</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#a3"></use>
+            </svg>
+        </div>
+        <p class="box-desc">animateMotion : circle</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#a4"></use>
+            </svg>
+        </div>
+        <p class="box-desc">animateMotion : path</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#a5"></use>
+            </svg>
+        </div>
+        <p class="box-desc">animateMotion : textPath</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <use xlink:href="#clock"></use>
+            </svg>
+        </div>
+        <p class="box-desc">Clock</p>
+    </div>
+
+
+</div>
+<svg class="hidden">
+    <defs>
+        <g id="a1">
+            <path d="m10 50 h 80" style="stroke-width:2;stroke:#fc1;stroke-linecap: round"></path>
+            <path d="m10 45 L 15 50 L 10 55 L 5 50 z" style="stroke-width: 1;stroke: #fc1">
+                <animateMotion values="0,0;80,0;0,0" dur="4s" fill="freeze" repeatCount="indefinite"></animateMotion>
+            </path>
+        </g>
+
+        <g id="a2">
+            <rect x="10" y="10" width="80" height="80" rx="5" ry="5"
+                  style="stroke-width:2;stroke:#0c9;stroke-linecap:round;fill: none"></rect>
+            <circle r="4" cx="10" cy="10" style="stroke-width: 1;stroke: #0c9">
+                <animateMotion path="m0 0 h 80 v 80 h -80 v -80" dur="10s" fill="freeze"
+                               repeatCount="indefinite"></animateMotion>
+            </circle>
+        </g>
+
+        <g id="a3">
+            <path d="M10,50 C10,27.624309392265193 27.900552486187845,9.5 50,9.5 C72.09944751381215,9.5 90,27.624309392265193 90,50 C90,72.37569060773481 72.09944751381215,90.5 50,90.5 C27.900552486187845,90.5 10,72.37569060773481 10,50 z"
+                  style="stroke-width:2;stroke:#f66;stroke-linecap:round;fill: none"></path>
+            <circle r="4" cx="0" cy="0" style="stroke-width: 1;stroke: #f66">
+                <animateMotion
+                        path="M10,50 C10,27.624309392265193 27.900552486187845,9.5 50,9.5 C72.09944751381215,9.5 90,27.624309392265193 90,50 C90,72.37569060773481 72.09944751381215,90.5 50,90.5 C27.900552486187845,90.5 10,72.37569060773481 10,50 z"
+                        dur="4s" fill="freeze"
+                        dur="30s" fill="freeze" repeatCount="indefinite"></animateMotion>
+            </circle>
+
+        </g>
+
+        <g id="a4">
+            <path d="M7.57402985414422,40.258317200761866 L39.984817192030086,40.258317200761866 L49.999999875803724,8.733208139567914 L60.015188254338106,40.258317200761866 L92.42596989746332,40.258317200761866 L66.20514012787869,59.74168306681323 L76.22084103491017,91.26679212800703 L49.999999875803724,71.78289566809127 L23.779164411458336,91.26679212800703 L33.79486816587023,59.74168306681323 L7.57402985414422,40.258317200761866 z"
+                  style="stroke-width:2;stroke:#09e;stroke-linecap:round;stroke-linejoin:round;fill: none"></path>
+            <circle r="4" cx="0" cy="0" style="stroke-width: 1;stroke: #09e">
+                <animateMotion
+                        path="M7.57402985414422,40.258317200761866 L39.984817192030086,40.258317200761866 L49.999999875803724,8.733208139567914 L60.015188254338106,40.258317200761866 L92.42596989746332,40.258317200761866 L66.20514012787869,59.74168306681323 L76.22084103491017,91.26679212800703 L49.999999875803724,71.78289566809127 L23.779164411458336,91.26679212800703 L33.79486816587023,59.74168306681323 L7.57402985414422,40.258317200761866 z"
+                        dur="4s" fill="freeze"
+                        dur="30s" fill="freeze" repeatCount="indefinite"></animateMotion>
+            </circle>
+        </g>
+
+        <g id="a5">
+            <path id="wavePath" d="m0 50 Q 30 70, 50 50 Q 70 30, 100 50"
+                  style="stroke:#27ccff;fill: none" transform="translate(0 , 10)"></path>
+            <use xlink:href="#wavePath" style="fill: #358eb0;stroke-width:5;stroke: #358eb0"
+                 transform="translate(0 , 5)"></use>
+            <use xlink:href="#wavePath" style="fill: #186db0;stroke-width:5;stroke: #186db0"
+                 transform="translate(0 , 15)"></use>
+            <text style="fill: #ff8412;font-size: 12px">
+                >->
+                <!-- <animateMotion  path="m10 50 Q 30 80, 50 50 Q 70 20, 90 50"
+                                rotate="auto" dur="5s" fill="freeze"></animateMotion>-->
+                <animateMotion rotate="auto" dur="4s" fill="freeze" repeatCount="indefinite">
+                    <mpath xlink:href="#wavePath"></mpath>
+                </animateMotion>
+            </text>
+        </g>
+
+
+        <!-- funny clock -->
+        <symbol>
+            <path id="round-1" class="clock-track"
+                  d="M10,50 C10,27.624309392265193 27.900552486187845,9.5 50,9.5 C72.09944751381215,9.5 90,27.624309392265193 90,50 C90,72.37569060773481 72.09944751381215,90.5 50,90.5 C27.900552486187845,90.5 10,72.37569060773481 10,50 z"></path>
+            <path id="round-2" class="clock-track"
+                  d="M21.831275939941406,49.99999961256981 C21.831275939941406,34.24263351974567 34.43716881420072,21.479166984558105 49.99999952316284,21.479166984558105 C65.56283023212495,21.479166984558105 78.16872310638428,34.24263351974567 78.16872310638428,49.99999961256981 C78.16872310638428,65.75736570539397 65.56283023212495,78.52083224058151 49.99999952316284,78.52083224058151 C34.43716881420072,78.52083224058151 21.831275939941406,65.75736570539397 21.831275939941406,49.99999961256981 z"></path>
+            <path id="round-3" class="clock-track"
+                  d="M34.331275939941406,49.999999725391575 C34.331275939941406,41.23503659207088 41.34324644659796,34.13541645408111 50.00000015851964,34.13541645408111 C58.656753870441314,34.13541645408111 65.66872437709787,41.23503659207088 65.66872437709787,49.999999725391575 C65.66872437709787,58.76496285871227 58.656753870441314,65.86458299670204 50.00000015851964,65.86458299670204 C41.34324644659796,65.86458299670204 34.331275939941406,58.76496285871227 34.331275939941406,49.999999725391575 z"></path>
+        </symbol>
+
+
+        <g id="hour">
+            <use xlink:href="#round-1"></use>
+            <circle class="clock-point" r="4" cx="0" cy="0">
+                <animateMotion dur="3600s" fill="freeze" repeatCount="indefinite">
+                    <mpath xlink:href="#round-1"></mpath>
+                </animateMotion>
+            </circle>
+        </g>
+
+        <g id="minute">
+            <use xlink:href="#round-2"></use>
+            <circle class="clock-point" r="3" cx="0" cy="0">
+                <animateMotion dur="60s" fill="freeze" repeatCount="indefinite">
+                    <mpath xlink:href="#round-2"></mpath>
+                </animateMotion>
+            </circle>
+        </g>
+
+        <g id="second">
+            <use xlink:href="#round-3"></use>
+            <circle class="clock-point" r="2" cx="0" cy="0">
+                <animateMotion dur="1s" fill="freeze" repeatCount="indefinite">
+                    <mpath xlink:href="#round-3"></mpath>
+                </animateMotion>
+            </circle>
+        </g>
+
+        <g id="clock" transform="rotate(90,50,50)">
+            <circle r="40" cx="50" cy="50" class="clock-bg"></circle>
+            <use xlink:href="#hour"></use>
+            <use xlink:href="#minute"></use>
+            <use xlink:href="#second"></use>
+            <!--<use xlink:href="#minute"></use>-->
+        </g>
+    </defs>
+</svg>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "svg-essentials-learning",
+  "version": "1.0.0",
+  "description": "svg essentials 2nd edition book learning",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huogiafei/svg-essentials-learning.git"
+  },
+  "keywords": [
+    "css-secrets"
+  ],
+  "author": "huogiafei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huogiafei/svg-essentials-learning/issues"
+  },
+  "homepage": "https://github.com/huogiafei/svg-essentials-learning#readme"
+}
