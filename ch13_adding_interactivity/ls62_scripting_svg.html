@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripting svg</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+    <style>
+        #size-select {
+            cursor: pointer;
+        }
+
+        .size-text {
+            font-family: 'Lalezar', cursive;
+            text-anchor: middle;
+            font-size: 10px;
+            fill: #fff;
+            letter-spacing: 5px;
+        }
+
+        .size-text tspan {
+            position: relative;
+        }
+
+        .size-text tspan:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 30px;
+        }
+
+        .size-text .active {
+            fill: #333;
+        }
+
+        .clothes {
+            color: #ddd;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: currentColor;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+        #tshirt {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #tshirt.middle {
+            transform: translate(10px, 5px) scale(0.8);
+        }
+
+        #tshirt.small {
+            transform: translate(20px, 10px) scale(0.6);
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="title">Scripting svg</h1>
+<div class="wrap">
+    <!--
+    Refers: http://oreillymedia.github.io/svg-essentials-examples/ch13/basic_dom_example.svg
+            http://oreillymedia.github.io/svg-essentials-examples/ch13/simple_event.svg
+     -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <path id="path" d="m10 50 Q 30 100,50 50 Q 70 0,90 50"
+                      style="stroke:#fc1 ;fill:none; stroke-width:2"></path>
+            </svg>
+        </div>
+        <p class="box-desc">animation1</p>
+    </div>
+
+    <!-- Refers:
+        http://oreillymedia.github.io/svg-essentials-examples/ch13/shirt1.svg
+        http://oreillymedia.github.io/svg-essentials-examples/ch13/shirt_interact.html
+    -->
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <!-- size select -->
+                <g id="size-select">
+                    <path d="m0 80h100v20h-100z" style="fill:#0c9"></path>
+                    <path d="m0 80h33.33v20h-33.33z" style="fill: hsla(0,0%,100%,0.6)"></path>
+                    <path d="m33.33 80h33.33v20h-33.33z" style="fill: hsla(0,0%,100%,0.3)"></path>
+                    <path d="m66.66 80h33.33v20h-33.33z" style="fill: hsla(0,0%,100%,0.1)"></path>
+                    <text class="size-text" x="50" y="93">
+                        <tspan data-size="small">&nbsp;S&nbsp;</tspan>
+                        <tspan data-size="middle">&nbsp;M&nbsp;</tspan>
+                        <tspan class="active" data-size="large">&nbsp;L&nbsp;</tspan>
+                    </text>
+                </g>
+
+                <g id="tshirt" class="large">
+                    <path d="M30 10 Q 50 30, 70 10 L 90 30 L80 40 L 70 30 V 70 H 30 V 30 L20 40 L 10 30  z"
+                          class="clothes"></path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">clothes</p>
+    </div>
+</div>
+
+<script>
+    //animation 1
+    var p = document.querySelector('#path');
+    p.addEventListener('mouseover', function (e) {
+        this.style.strokeWidth = 10;
+    });
+    p.addEventListener('mouseout', function (e) {
+        this.style.strokeWidth = 2;
+    })
+
+    p.addEventListener('click', function (e) {
+        this.setAttribute('d', 'm0 50 Q 25 100,50 50 Q 75 0,100 50')
+    })
+
+    //clothes
+    var sizes = document.querySelectorAll('#size-select tspan');
+    sizes.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            this.parentNode.childNodes.forEach(function (el) {
+                el.classList = ''
+            })
+            this.classList = 'active';
+
+            var clothes = document.querySelector('#tshirt');
+            switch (this.getAttribute('data-size')) {
+                case 'large':
+                    clothes.classList = 'large';
+                    break;
+                case 'middle':
+                    clothes.classList = 'middle';
+                    break;
+                case 'small':
+                    clothes.classList = 'small';
+                    break;
+            }
+
+        })
+    })
+
+</script>
+</body>
+</html>

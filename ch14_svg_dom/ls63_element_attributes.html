@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determining the Value of Element Attributes</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .text {
+            font-size: 7px;
+            fill: #fff;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">Value of element attributes</h1>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch14/baseval_animval.svg -->
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <ellipse id="el" cx="50" cy="50" rx="40%" ry="1em" fill="#0c9">
+                    <animate id="animation" attributeName="rx"
+                             to="20%" begin="indefinite" dur="2s" fill="freeze"></animate>
+                </ellipse>
+            </svg>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="200" viewBox="0 0 200 100">
+                <text y="5" x="10" class="text">
+                    <!-- rx/ry -->
+                    <tspan x="1em" dy="1.5em">getAttribute("rx"):</tspan>
+                    <tspan x="70%" id="getRx"/>
+
+                    <!-- rx.baseVal -->
+                    <tspan x="1em" dy="1.5em">rx.baseVal.value:</tspan>
+                    <tspan x="70%" id="rxBase"/>
+
+                    <!-- valueAsString  / valueInSpecifiedUnits -->
+                    <tspan x="1em" dy="1.5em">rx.baseVal.valueAsString:</tspan>
+                    <tspan x="70%" id="rxBaseString"/>
+                    <tspan x="1em" dy="1.5em">ry.baseVal.valueInSpecifiedUnits:</tspan>
+                    <tspan x="70%" id="ryBaseUnits"/>
+                </text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<script>
+    var doc = document;
+    var el = $id('el');
+    $id('getRx').textContent = el.getAttribute('rx');
+    $id('rxBase').textContent = el.rx.baseVal.value;
+    $id('rxBaseString').textContent = el.rx.baseVal.valueAsString;
+    $id('ryBaseUnits').textContent = el.ry.baseVal.valueInSpecifiedUnits;
+
+
+    el.rx.baseVal.convertToSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_EMS);
+    doc.getElementById("rxBaseUnits").textContent =
+            el.rx.baseVal.valueAsString;
+    var animate = doc.getElementById("animation");
+    try {
+        animate.beginElement(); //动画开始
+    } catch (e) {/* 如果不支持动画，捕获异常 */
+    }
+    setTimeout(getAnimatedValue, 1000);
+    function getAnimatedValue() {
+        try {
+            animate.endElement(); //动画暂停
+        } catch (e) {
+        }
+        doc.getElementById("rxAnim").textContent = el.rx.animVal.value;
+        doc.getElementById("ryAnim").textContent = el.ry.animVal.value;
+    }
+    function $id(str) {
+        return document.getElementById(str);
+    }
+</script>
+</body>
+</html>

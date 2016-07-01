@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIL Animations</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<h1 class="title">Using Links</h1>
+<div class="wrap">
+    <!-- Refers: http://oreillymedia.github.io/svg-essentials-examples/ch13/smil_event_animation.svg -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <!-- svg btn -->
+                <g id="btn">
+                    <circle r="15" cx="50" cy="20" fill="#f66"></circle>
+                    <text x="50" text-anchor="middle" y="22" fill="#fff" font-size="9px">start</text>
+                </g>
+
+                <!-- animation  -->
+                <g id="aniObj">
+                    <path d="m10 40 Q 50 40 ,90 40" stroke-width="2" stroke="#fc1" stroke-linecap="round" fill="none">
+                        <animate id="elastic" attributeName="d"
+                                 values="m10 40 Q 50 40 ,90 40;m10 40 Q 50 70 ,90 40;m10 40 Q 50 30 ,90 40;m10 40 Q 50 40 ,90 40"
+                                 keySplines="0,.51,.67,1;.03,.47,.7,.68;.42,.14,.6,.85"
+                                 calcMode="spline"
+                                 begin="btn.click" dur="1s"></animate>
+                    </path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">smil animation</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <!-- svg btn -->
+                <g id="btn2">
+                    <circle r="15" cx="50" cy="50" fill="#09e"></circle>
+                    <text x="50" text-anchor="middle" y="52" fill="#fff" font-size="9px">start</text>
+                </g>
+                <!-- animation  -->
+                <g id="aniObj2">
+                    <path d="m10 50 Q 50 100 ,90 50" stroke-width="2" stroke="#fc1" stroke-linecap="round" fill="none">
+                        <animate id="elastic" attributeName="d"
+                                 to="m10 40 Q -20 320 ,10 40"
+                                 begin="btn2.click" dur="2s"></animate>
+                    </path>
+                </g>
+            </svg>
+        </div>
+        <p class="box-desc">smil animation</p>
+    </div>
+</div>
+</body>
+</html>

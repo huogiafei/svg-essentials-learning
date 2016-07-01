@@ -11,12 +11,32 @@ SVG Essentials learning
 还有D3.js，那时候只想说一句：“教练，我要学svg”。那都已经是1年前的事情，而且发现国内的资料太少了，所以就有了这本书的读后感，还有
 分享一些个人觉得不错的svg学习资料。
 
-- oxxo studio http://www.oxxostudio.tw/articles/201410/svg-tutorial.html
-- 张鑫旭 http://www.zhangxinxu.com/
-- W3cplus http://www.w3cplus.com/blog/tags/411.html
+- [oxxo studio](http://www.oxxostudio.tw/articles/201410/svg-tutorial.html)
+- [张鑫旭](http://www.zhangxinxu.com/)
+- [W3cplus](http://www.w3cplus.com/blog/tags/411.html)
+- [MDN SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial)
+- [jenkov SVG Tutorial](http://tutorials.jenkov.com/svg/index.html)
+
 
 　　虽然这本SVG Essential比起CSS Secrets是差了那么一点（最想吐槽就是书上的demo），但是内容方面还是挺全面的，svg入门看还是非常合适的，
 咬咬牙，为了snap和D3,豁出去了。
+
+**SVG工具**
+
+- [vector paint](http://vectorpaint.yaks.co.nz/)
+- [http://editor.method.ac/](http://editor.method.ac/) 强大在线svg Editor
+- [svg path](http://jxnblk.com/paths/) 学习path的时候用得上
+- [svgomg](https://jakearchibald.github.io/svgomg/) SVGO的在线编辑
+- AI,Inkscape 
+
+**SVG框架**
+
+- [snap.svg](http://snapsvg.io/) SVG动画框架，也是我最想学的
+- [D3.js](https://d3js.org/) SVG视觉图表框架，给我感觉就是高大上
+
+-------------------------------------------------------------
+
+
 
 **CH01 入门指南**
 
@@ -134,7 +154,32 @@ gradient
 
 **CH10 裁剪和蒙版**
 
--clipPath 和 clip-path
+- 裁剪：clipPath ,clip-path ,clipPathUnits
+- 蒙版：mask 
+
+**CH11 滤镜**
+
+容我说两句：滤镜虽然学起来挺费劲，但是效果和css的完全filter不是一个概念。
+
+- feGaussianBlur投影，结合feOffset偏移和feMerge合并
+- feColorMatrix 改变颜色
+- feImage 图片作为滤镜输入源
+- feComponentTransfer 调色
+- feComposite 两个输入源层叠效果
+- feBlend 
+- feFlood 纯色填充
+- feTile 背景填充
+- feDiffuseLighting/feSpecularLighting 漫反射/镜面反射
+- feMorphology 加粗减细
+- feConvolveMatrix  模糊、锐化、浮雕和斜切效果
+- feDisplacementMap
+- feTurbulence纹理效果
+
+**CH12 SVG动画**
+
+
+
+
 
  
 

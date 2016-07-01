@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Links</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .btn .triangle {
+            transition: all 1s linear;
+        }
+
+        .btn:hover .triangle {
+            fill: none;
+            stroke: #f66;
+        }
+
+        @keyframes animKeys {
+            0%{
+                fill-opacity: 1;
+                stroke-opacity: 0;
+            }
+            100%{
+                fill-opacity: 0;
+                stroke-opacity: 1;
+            }
+        }
+
+        .aniLink:hover{
+            animation: animKeys 0.3s ease-in-out forwards;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1 class="title">Using Links</h1>
+<div class="wrap">
+    <!-- Refers:
+    http://oreillymedia.github.io/svg-essentials-examples/ch13/svg_link.svg
+     http://oreillymedia.github.io/svg-essentials-examples/ch13/svg_css_link.svg
+    -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <!-- link1 -->
+                <a xlink:href="spade.svg">
+                    <text x="50" text-anchor="middle" y="35" fill="#09c">Link</text>
+                </a>
+
+                <!-- link2 -->
+                <a xlink:href="http://www.36kr.com/" class="btn">
+                    <circle cx="50" cy="70" r="20" fill="#0c9"></circle>
+                    <path class="triangle" d="m50 60 l 10 15 h-20 z" fill="#f66"></path>
+                </a>
+            </svg>
+        </div>
+        <p class="box-desc">links</p>
+    </div>
+
+    <!-- http://oreillymedia.github.io/svg-essentials-examples/ch13/anim_css_link.svg -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <a class="aniLink" xlink:href="spade.svg">
+                    <text x="50" text-anchor="middle" y="35" fill="#09c" stroke="#09c" stroke-width="1">Link2</text>
+                </a>
+            </svg>
+        </div>
+        <p class="box-desc">animation</p>
+    </div>
+</div>
+</body>
+</html>
