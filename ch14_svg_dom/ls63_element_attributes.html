@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="../css/common.css">
     <style>
         .text {
-            font-size: 7px;
+            font-size: 5px;
             fill: #fff;
+        }
+
+        .text tspan{
+            font-size: 5px;
         }
     </style>
 </head>
@@ -29,7 +33,7 @@
 
     <div class="box">
         <div class="card">
-            <svg width="400" height="200" viewBox="0 0 200 100">
+            <svg width="500" height="300" viewBox="0 0 200 100">
                 <text y="5" x="10" class="text">
                     <!-- rx/ry -->
                     <tspan x="1em" dy="1.5em">getAttribute("rx"):</tspan>
@@ -37,13 +41,26 @@
 
                     <!-- rx.baseVal -->
                     <tspan x="1em" dy="1.5em">rx.baseVal.value:</tspan>
-                    <tspan x="70%" id="rxBase"/>
+                    <tspan x="70%" id="rxBase"></tspan>
 
-                    <!-- valueAsString  / valueInSpecifiedUnits -->
-                    <tspan x="1em" dy="1.5em">rx.baseVal.valueAsString:</tspan>
-                    <tspan x="70%" id="rxBaseString"/>
+                    <!-- valueAsString  / valueInSpecifiedUnits -->After rx.baseVal.convertToSpecifiedUnits():
+                    <tspan x="70%" id="rxBaseString"></tspan>
                     <tspan x="1em" dy="1.5em">ry.baseVal.valueInSpecifiedUnits:</tspan>
-                    <tspan x="70%" id="ryBaseUnits"/>
+                    <tspan x="70%" id="ryBaseUnits"></tspan>
+
+
+                    <tspan style="font-weight:bold;" x="1em" dy="2.5em">After
+                        rx.baseVal.convertToSpecifiedUnits():</tspan>
+                    <tspan x="1em" dy="1.5em">rx.baseVal.valueAsString:</tspan>
+                    <tspan x="50%" id="rxBaseUnits"></tspan>
+
+
+                    <tspan style="font-weight:bold;" x="1em" dy="2.5em">After
+                        approx. 1 second of animation:</tspan>
+                    <tspan x="1em" dy="1.5em">rx.animVal.value:</tspan>
+                    <tspan x="60%" id="rxAnim"></tspan>
+                    <tspan x="1em" dy="1.5em">ry.animVal.value:</tspan>
+                    <tspan x="60%" id="ryAnim"></tspan>
                 </text>
             </svg>
         </div>
@@ -65,7 +82,8 @@
     var animate = doc.getElementById("animation");
     try {
         animate.beginElement(); //动画开始
-    } catch (e) {/* 如果不支持动画，捕获异常 */
+    } catch (e) {
+        console.log(e);
     }
     setTimeout(getAnimatedValue, 1000);
     function getAnimatedValue() {

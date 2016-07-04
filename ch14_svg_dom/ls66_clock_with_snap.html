@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Clock(snap.svg)</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/snap.svg-min.js"></script>
+</head>
+<body>
+<!-- Refers: http://oreillymedia.github.io/svg-essentials-examples/ch14/snap_animated_clock.svg -->
+<h1 class="title">SVG Clock(snap.svg)</h1>
+<div class="wrap">
+    <div class="box">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             id="clock" width="200" height="200" viewBox="0 0 100 100"
+             onload="init()"></svg>
+
+    </div>
+</div>
+<script>
+    /*snap svg first demo*/
+
+    var clock;
+    var hourHand, minHand, secHand;
+    var SEC_PER_MINUTE = 60,
+            SEC_PER_HOUR = 60 * 60,
+            SEC_PER_12HOURS = 60 * 60 * 12;
+
+    function init() {
+        clock = Snap('#clock');
+
+        /*dial 表盘*/
+        var face = clock.circle(50, 50, 40);
+        face.attr({
+            fill: "#444",
+            stroke: "#222",
+            strokeWidth: "8"
+        });
+
+        /*hour marker 小时刻度*/
+        var ticks = clock.g();
+        var tickMark;
+        for (var i = 1; i < 13; i++) {
+            tickMark = clock.circle(50, 18, 1);
+            tickMark.attr({
+                fill: '#aaa'
+            });
+            tickMark.transform("rotate(" + (i - 1) * 30 + ",50,50)");
+            ticks.add(tickMark);
+        }
+
+        /*hands 指针*/
+        hourHand = clock.path('M50 35 V 50');
+        minHand = clock.path('M50 25 V 50');
+        secHand = clock.path('M50 20 V 58');
+
+        var hands = clock.g(hourHand, minHand, secHand);
+        hands.attr({
+            stroke: '#222',
+            strokeWidth: 3,
+            strokeLinecap: 'round'
+        });
+
+        secHand.attr({
+            stroke: '#C0392B',
+            strokeWidth: '0.5'
+        })
+
+        /*center point*/
+        var pointOuter = clock.circle(50, 50, 3);
+        var pointInner = clock.circle(50, 50, 1);
+
+        pointOuter.attr({
+            fill: '#C0392B'
+        })
+
+        pointInner.attr({
+            fill: '#ccc'
+        })
+
+        var points = clock.g(pointOuter, pointInner);
+
+
+        updateClock();
+
+    }
+
+    //clock run
+    function updateClock() {
+        var secPerMinute = 60,
+                secPerHour = 60 * 60,
+                secPer12Hours = 60 * 60 * 12;
+
+        var date = new Date();
+
+        /*calculate total seconds */
+        var time = date.getMilliseconds() / 1000 +
+                date.getSeconds() +
+                date.getMinutes() * 60 +
+                date.getHours() * 60 * 60;
+
+        /*calc rotate deg*/
+        var s = (time % secPerMinute) / secPerMinute * 360,
+                m = (time % secPerHour) / secPerHour * 360,
+                h = (time % secPer12Hours) / secPer12Hours * 360;
+
+
+        /*rotate*/
+        hourHand.transform('r' + h + ',50,50');
+        minHand.transform('r' + m + ',50,50');
+        secHand.transform('r' + s + ',50,50');
+
+        /*animation*/
+        secHand.animate({
+            transform: 'r' + [s + 360, 50, 50]
+        }, 60000, mina.linear);
+
+        minHand.animate({
+            transform: 'r' + [m + 6, 50, 50]
+        }, 60000, mina.linear);
+
+        hourHand.animate({
+            transform: 'r' + [s + 0.5, 50, 50]
+        }, 60000, mina.linear, updateClock);
+
+        //window.requestAnimationFrame(updateClock);
+    }
+
+
+</script>
+</body>
+</html>

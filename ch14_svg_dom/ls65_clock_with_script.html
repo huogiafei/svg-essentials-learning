@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Clock</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<!-- Refers: http://oreillymedia.github.io/svg-essentials-examples/ch14/animated_clock_js.svg -->
+<h1 class="title">SVG Clock</h1>
+<div class="wrap">
+
+    <!-- Static  -->
+    <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" id="clock" width="200" height="200" viewBox="0 0 100 100"
+                 onload="init()"></svg>
+        <p class="box-desc">svg clock</p>
+    </div>
+</div>
+<script>
+    var clock;
+    function init() {
+        var doc = document;
+        clock = document.getElementById('clock');
+        var svgns = clock.namespaceURI;
+        clock.suspendRedraw(1000); //暂停SVG更新绘制,可能会提升性能
+
+        //dial 表盘
+        var face = doc.createElementNS(svgns, 'circle');
+        face.cx.baseVal.value = 50;
+        face.cy.baseVal.value = 50;
+        face.r.baseVal.value = 40;
+        face.style.cssText =
+                "fill:#444;" +
+                "stroke:#222;" +
+                "stroke-width:8";
+        clock.appendChild(face);
+
+        //hour marker
+        var ticks = clock.appendChild(doc.createElementNS(svgns, 'g'));
+
+        var tickMark;
+        for (var i = 1; i < 13; i++) {
+            tickMark = doc.createElementNS(svgns, 'circle');
+            tickMark.setAttribute('cx', '50');
+            tickMark.setAttribute('cy', '18');
+            tickMark.setAttribute('r', '1');
+            tickMark.setAttribute('transform', 'rotate(' + (i - 1) * 30 + ',50,50)');
+            tickMark.style.cssText = "fill:#aaa;";
+            ticks.appendChild(tickMark);
+        }
+
+        //hour arrow
+        var hands = clock.appendChild(doc.createElementNS(svgns, 'g'));
+        hands.style.cssText =
+                'stroke:#222;' +
+                'stroke-width:3px;' +
+                'stroke-linecap:round';
+        var hourHand = hands.appendChild(doc.createElementNS(svgns, 'path'));
+        hourHand.setAttribute('d', 'M50 35 V 50');
+        hourHand.setAttribute('transform', 'rotate(125,50,50)');
+
+        //min arrow
+        var minHand = hourHand.cloneNode(true);
+        minHand.setAttribute('d', 'M50 25 V 50');
+        minHand.setAttribute('transform', 'rotate(45,50,50)');
+        hands.appendChild(minHand);
+
+        //sec arrow
+        var secHand = hourHand.cloneNode(true);
+        secHand.setAttribute('d', 'M50 20 V 58');
+        secHand.setAttribute('transform', 'rotate(0,50,50)');
+        secHand.style.cssText = 'stroke:#09e;stroke-width:0.5';
+        hands.appendChild(secHand);
+
+        //big center point
+        var center = clock.appendChild(doc.createElementNS(svgns, 'g'));
+        var centerPoint = center.appendChild(doc.createElementNS(svgns, 'circle'));
+        centerPoint.setAttribute('cx', 50);
+        centerPoint.setAttribute('cy', 50);
+        centerPoint.setAttribute('r', 3);
+        centerPoint.style.cssText = 'fill:#09e';
+
+        //small center point
+        var centerPointSmall = centerPoint.cloneNode(true);
+        centerPointSmall.setAttribute('r', 1);
+        centerPointSmall.style.cssText = 'fill:#ccc';
+        center.appendChild(centerPointSmall);
+
+        var secTransform = secHand.transform.baseVal.getItem(0);
+        var minTransform = minHand.transform.baseVal.getItem(0);
+        var hourTransform = hourHand.transform.baseVal.getItem(0);
+
+        updateClock();
+
+        clock.unsuspendRedrawAll();
+
+        //clock run
+        function updateClock() {
+            var secPerMinute = 60,
+                    secPerHour = 60 * 60,
+                    secPer12Hours = 60 * 60 * 12;
+
+            var date = new Date();
+
+            /*calculate total seconds */
+            var time = date.getMilliseconds() / 1000 +
+                    date.getSeconds() +
+                    date.getMinutes() * 60 +
+                    date.getHours() * 60 * 60;
+
+            /*calc rotate deg*/
+            var s = (time % secPerMinute)/secPerMinute * 360,
+                m = (time % secPerHour) / secPerHour * 360,
+                h = (time % secPer12Hours) / secPer12Hours * 360;
+
+
+            /*rotate*/
+            hourTransform.setRotate(h,50,50);
+            minTransform.setRotate(m,50,50);
+            secTransform.setRotate(s,50,50);
+
+            window.requestAnimationFrame( updateClock );
+        }
+    }
+</script>
+</body>
+</html>

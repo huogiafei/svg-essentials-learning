@@ -16,6 +16,7 @@ SVG Essentials learning
 - [W3cplus](http://www.w3cplus.com/blog/tags/411.html)
 - [MDN SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial)
 - [jenkov SVG Tutorial](http://tutorials.jenkov.com/svg/index.html)
+- [W3C SVG](https://www.w3.org/TR/SVG/Overview.html)
 
 
 　　虽然这本SVG Essential比起CSS Secrets是差了那么一点（最想吐槽就是书上的demo），但是内容方面还是挺全面的，svg入门看还是非常合适的，

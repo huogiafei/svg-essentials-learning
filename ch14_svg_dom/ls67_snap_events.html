@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap events</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/snap.svg-min.js"></script>
+</head>
+<body>
+<!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch14/snap_events.html -->
+<h1 class="title">Snap Events</h1>
+<div class="wrap">
+    <div class="box">
+        <div class="card">
+            <svg width="400" height="400" id="paper" viewBox="0 0 100 100"></svg>
+        </div>
+    </div>
+</div>
+<script>
+    var paper = Snap("#paper");
+    console.log(paper.svg);
+
+    /**
+     * circle
+     */
+    /*draggable circle*/
+    var round1 = paper.circle(50, 50, 10);
+    var round2 = paper.circle(50, 50, 10);
+
+    round1.attr({
+        fill: '#0c9',
+        fillOpacity: '0.7'
+    })
+
+    var r_g = paper.gradient("r(0.4, 0.4, 0.7)#fff-#0c9");
+    round2.attr({
+        fill: r_g,
+        fillOpacity: '0.7'
+    });
+    var rounds = paper.g(round1, round2);
+
+    round2.drag(dragMove, dragStart, dragEnd);
+    var startX, startY, dx, dy;
+
+    function dragStart(x, y, evt) {
+        startX = parseInt(round2.attr('cx'),10);
+        startY = parseInt(round2.attr('cy'),10);
+    }
+
+    function dragMove(dx, dy, x, y, evt) {
+        console.log(dx,dy);
+        round2.attr({
+            cx: dx/4 + startX,
+            cy: dy/4 + startY
+        })
+    }
+
+    function dragEnd(evt){
+        //do nothing
+    }
+
+    /**
+     * button
+     */
+    /*reset button*/
+    var text = paper.text(50, 90, 'reset');
+    text.attr({
+        fontSize: '7px',
+        fill: '#0c9',
+        textAnchor: 'middle'
+    })
+
+    var rect = paper.rect(40, 83, 20, 10, 1, 1);
+    rect.attr({
+        fill: '#00a287',
+        fillOpacity: 0,
+        stroke: '#0c9',
+        strokeWidth: 0.8,
+    })
+
+    var button = paper.g(rect, text);//tips :layer order
+    button.attr('cursor', 'pointer');
+
+    button.click(clickHandler);
+    button.hover(hoverHandler, unHoverHandler);
+
+    /*button handler*/
+    function clickHandler() {
+        console.log('btn click');
+        /*reset*/
+        round2.animate({
+            cx: 50,
+            cy: 50
+        },300,mina.elastic);
+    }
+
+    function hoverHandler() {
+        rect.animate({
+            fillOpacity: 1,
+            strokeOpacity: 0
+        }, 300, mina.easeinout);
+
+        text.animate({
+            fill: '#eee',
+        }, 400, mina.linear);
+    }
+
+    function unHoverHandler() {
+        rect.animate({
+            fillOpacity: 0,
+            strokeOpacity: 1
+        }, 300, mina.easeinout);
+
+        text.animate({
+            fill: '#0c9',
+        }, 400, mina.linear);
+    }
+
+</script>
+</body>
+</html>
