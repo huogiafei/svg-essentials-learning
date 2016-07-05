@@ -15,14 +15,3 @@ text {
     color: rgba(0, 204, 153, 0.48);
 }
 
-.pattern-bg{
-    fill: #0c9;
-    fill-opacity: 0.6;
-}
-
-.pattern-bg2{
-    fill: #333;
-    fill-opacity: 0.8;
-    stroke-width: 1px;
-    stroke: #fc1;
-}

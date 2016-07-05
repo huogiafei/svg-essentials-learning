@@ -22,6 +22,32 @@
         </div>
         <p class="box-desc">scale</p>
     </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <path id="triangle" d="m30 24 L 70 50 L30 76 z" fill="none" stroke="#fc1"></path>
+                </defs>
+                <use xlink:href="#triangle"></use>
+                <use xlink:href="#triangle" transform="translate(100,0) scale(-1,1)" stroke-dasharray="2"></use>
+            </svg>
+        </div>
+        <p class="box-desc">Vertical Flip</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <path id="triangle2" d="m50 25 L 70 60 L30 60 z" fill="none" stroke="#0c9"></path>
+                </defs>
+                <use xlink:href="#triangle2"></use>
+                <use xlink:href="#triangle2" transform="translate(0,100) scale(1,-1)" stroke-dasharray="2"></use>
+            </svg>
+        </div>
+        <p class="box-desc">horizontal Flip</p>
+    </div>
 </div>
 </body>
 </html>

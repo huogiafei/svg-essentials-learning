@@ -130,7 +130,7 @@
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
                 <defs>
-                    <radialGradient id="three_stops" cx="50%" cy="50%"   r="58%" >
+                    <radialGradient id="three_stops" cx="50%" cy="50%" r="58%">
                         <stop offset="0%" style="stop-color:#fc1"></stop>
                         <stop offset="50%" style="stop-color:#f66"></stop>
                         <stop offset="100%" style="stop-color:#09e"></stop>
@@ -142,6 +142,106 @@
             </svg>
         </div>
         <p class="box-desc">radial gradient</p>
+    </div>
+
+    <!-- gradientUnits  -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="greenBg-1" gradientUnits='userSpaceOnUse'
+                                    x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="10%" style="stop-color:#95d7c7"></stop>
+                        <stop offset="90%" style="stop-color:#1e654a"></stop>
+                    </linearGradient>
+
+                    <linearGradient id="greenBg-2" gradientUnits='objectBoundingBox'
+                                    x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="10%" style="stop-color:#95d7c7"></stop>
+                        <stop offset="90%" style="stop-color:#1e654a"></stop>
+                    </linearGradient>
+                </defs>
+                <rect width="100" height="100" fill="url(#greenBg-2)" stroke="#fff"></rect>
+                <!-- units -->
+                <rect x="20" y="40" width="20" height="20" stroke="#fff" fill="url(#greenBg-1)"></rect>
+
+                <rect x="60" y="40" width="20" height="20" stroke="#fff" fill="url(#greenBg-2)"></rect>
+            </svg>
+        </div>
+        <p class="box-desc">gradientUnits</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <defs>
+                    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="5%" stop-color="#F00"/>
+                        <stop offset="95%" stop-color="#ff0"/>
+                    </linearGradient>
+                    <linearGradient id="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"
+                                    gradientUnits="userSpaceOnUse">
+                        <stop offset="5%" stop-color="#F00"/>
+                        <stop offset="95%" stop-color="#ff0"/>
+                    </linearGradient>
+                </defs>
+                <rect width="200" height="200" fill="url(#bg)" stroke="#000" stroke-width="3"></rect>
+                <rect width="70" height="70" x="20" y="50" stroke="#000" fill="url(#userSpaceOnUse)"/>
+                <rect width="70" height="70" x="110" y="50" stroke="#000" fill="url(#bg)"/>
+            </svg>
+        </div>
+        <p class="box-desc">objectBoundingBox / userSpaceOnUse</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="c1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="5%" stop-color="#fd6138"/>
+                        <stop offset="85%" stop-color="transparent"/>
+                    </linearGradient>
+                    <linearGradient id="c2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="5%" stop-color="#fc1"/>
+                        <stop offset="85%" stop-color="transparent"/>
+                    </linearGradient>
+                    <linearGradient id="c3" x1="100%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="5%" stop-color="#0c9"/>
+                        <stop offset="85%" stop-color="transparent"/>
+                    </linearGradient>
+                    <linearGradient id="c4" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="5%" stop-color="#09e"/>
+                        <stop offset="85%" stop-color="transparent"/>
+                    </linearGradient>
+
+                    <symbol id="colorfulBg" viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="url(#c2)" fill-opacity="0.8"></rect>
+                        <rect width="100" height="100" fill="url(#c3)" fill-opacity="0.8">></rect>
+                        <rect width="100" height="100" fill="url(#c4)" fill-opacity="0.8">></rect>
+                        <rect width="100" height="100" fill="url(#c1)" fill-opacity="0.8">></rect>
+                    </symbol>
+                </defs>
+                <use xlink:href="#colorfulBg"></use>
+            </svg>
+        </div>
+        <p class="box-desc">multiple gradient</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <defs>
+                    <radialGradient id="ballBg" cx="50%" cy="50%" r="58%" fx="35%" fy="35%">
+                        <stop offset="10%" style="stop-color:#ffe6e8"></stop>
+                        <stop offset="40%" style="stop-color:#ff7932"></stop>
+                        <stop offset="85%" style="stop-color:#333"></stop>
+                        <stop offset="100%" style="stop-color:#111"></stop>
+                    </radialGradient>
+                </defs>
+                <circle fill="url(#ballBg)" r="45" cx="50" cy="50"></circle>
+            </svg>
+        </div>
+        <p class="box-desc">r-G (fx,fy)</p>
     </div>
 
 

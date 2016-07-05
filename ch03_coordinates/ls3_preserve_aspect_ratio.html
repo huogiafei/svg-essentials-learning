@@ -6,6 +6,14 @@
     <title>PreserveAspectRatio 对齐方式</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/ls3.css">
+    <style>
+        .card{
+            overflow: hidden;
+        }
+        .bg {
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
 <!-- book demo: http://oreillymedia.github.io/svg-essentials-examples/ch03/meet_slice_specifier.html -->
@@ -13,112 +21,92 @@
 <div class="wrap">
     <div class="box">
         <div class="card">
-            <svg width="200" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMinYMax meet"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            <svg viewbox="0 0 100 160" class="bg">
+                <use xlink:href="#rects"></use>
             </svg>
         </div>
-        <p class="box-desc">xMinYmin meet</p>
+        <p class="box-desc">normal</p>
     </div>
 
     <div class="box">
         <div class="card">
-            <svg width="200" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMinYMid meet"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            <svg viewbox="0 0 100 160" class="bg" width="240" height="200"
+                preserveAspectRatio="xMinYMin slice">
+                <use xlink:href="#rects"></use>
             </svg>
         </div>
-        <p class="box-desc">xMinYMid meet</p>
+        <p class="box-desc">xMinYMin slice</p>
     </div>
 
     <div class="box">
         <div class="card">
-            <svg width="200" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMinYMin meet"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
+            <svg viewbox="0 0 100 160" class="bg" width="240" height="200"
+                 preserveAspectRatio="xMidYMid slice">
+                <use xlink:href="#rects"></use>
             </svg>
-
-        </div>
-        <p class="box-desc">xMinYMid meet</p>
-    </div>
-
-    <div class="box">
-        <div class="card">
-            <svg width="200" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMinYMin slice"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
-            </svg>
-
-        </div>
-        <p class="box-desc">xMinYMid slice</p>
-    </div>
-
-    <div class="box">
-        <div class="card">
-            <svg width="200" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMinYMin slice"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="50" height="50"></rect>
-            </svg>
-
         </div>
         <p class="box-desc">xMidYMid slice</p>
     </div>
 
     <div class="box">
         <div class="card">
-            <svg width="100" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMinYMin slice"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
-                <text fill="hsla(0,0%,100%,0.5)" x="20" y="40" style="letter-spacing: 0.2em">123456789</text>
+            <svg viewbox="0 0 100 160" class="bg" width="240" height="200"
+                 preserveAspectRatio="xMaxYMax slice">
+                <use xlink:href="#rects"></use>
             </svg>
-
         </div>
-        <p class="box-desc">xMinYMid slice</p>
+        <p class="box-desc">xMaxYMax slice</p>
+    </div>
+
+
+    <!-- meet -->
+
+    <div class="box">
+        <div class="card">
+            <svg viewbox="0 0 100 160" class="bg" width="240" height="200"
+                 preserveAspectRatio="xMinYMin meet">
+                <use xlink:href="#rects"></use>
+            </svg>
+        </div>
+        <p class="box-desc">xMinYMin slice</p>
     </div>
 
     <div class="box">
         <div class="card">
-            <svg width="100" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMidYMin slice"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
-                <text fill="hsla(0,0%,100%,0.5)" x="20" y="40" style="letter-spacing: 0.2em">123456789</text>
+            <svg viewbox="0 0 100 160" class="bg" width="240" height="200"
+                 preserveAspectRatio="xMidYMid meet">
+                <use xlink:href="#rects"></use>
             </svg>
-
         </div>
         <p class="box-desc">xMidYMid slice</p>
     </div>
 
     <div class="box">
         <div class="card">
-            <svg width="100" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="xMaxYMin slice"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
-                <text fill="hsla(0,0%,100%,0.5)" x="20" y="40" style="letter-spacing: 0.2em">123456789</text>
+            <svg viewbox="0 0 100 160" class="bg" width="240" height="200"
+                 preserveAspectRatio="xMaxYMax meet">
+                <use xlink:href="#rects"></use>
             </svg>
-
         </div>
-        <p class="box-desc">xMaxYMid slice</p>
-    </div>
-
-    <div class="box">
-        <div class="card">
-            <svg width="200" height="300" viewBox="0 0 100 100"
-                 preserveAspectRatio="none"
-                 style="border: 1px solid yellow;">
-                <rect fill="#0c9" x="10" y="10" width="100" height="50"></rect>
-            </svg>
-
-        </div>
-        <p class="box-desc">none</p>
+        <p class="box-desc">xMaxYMax slice</p>
     </div>
 </div>
+
+<svg class="hidden">
+    <defs>
+        <g id="rects">
+            <rect width="40" height="30" x="0" y="0" fill="#c00">
+            </rect>
+            <rect width="40" height="30" x="60" y="0" fill="#f80">
+            </rect>
+            <rect width="40" height="30" x="0" y="130" fill="#09c">
+            </rect>
+            <rect width="40" height="30" x="60" y="130" fill="#0c0">
+            </rect>
+            <rect width="40" height="30" x="30" y="65" fill="#000">
+            </rect>
+        </g>
+    </defs>
+</svg>
 </body>
 </html>

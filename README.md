@@ -22,6 +22,12 @@ SVG Essentials learning
 　　虽然这本SVG Essential比起CSS Secrets是差了那么一点（最想吐槽就是书上的demo），但是内容方面还是挺全面的，svg入门看还是非常合适的，
 咬咬牙，为了snap和D3,豁出去了。
 
+**SVG书籍**
+
+- [SVG Text Layout](http://shop.oreilly.com/product/0636920043072.do) 
+- [SVG Colors, Patterns & Gradients](http://shop.oreilly.com/product/0636920043065.do) （正在翻译）
+- [数据可视化实战：使用D3设计交互式图表](http://www.ituring.com.cn/book/1126)
+
 **SVG工具**
 
 - [vector paint](http://vectorpaint.yaks.co.nz/)
@@ -87,7 +93,7 @@ SVG Essentials learning
  - external stylesheets
  - Presentation Attributes，我的理解是直接去掉style的内联写法，不过因为优先级是最低。
 - g 把子元素作为一个组合
-- defs 定义一个组合，只定义不显示
+- defs 定义一个组合，只定义不显示(gradient,path,clipPath,mask,filter,marker等等)
 - symbol 加强版defs，指定viewBox和preserveAspectRatio属性
 - use 重用上面三个定义的图形 (xlink:href)，可以指定图形位置
 - image 支持jpg和png
@@ -118,7 +124,7 @@ SVG Essentials learning
  - 负角度绘制为0 ，正角度为1，我的理解是顺/逆时针
  - 终点X y
 - Q(q) 二次贝塞尔曲线,(Q hx hy,ex,ey),Q后面跟着一个控制点和下一个点
-- T(t) 多边二次贝塞尔，自动计算控制点，只需要后面跟着下一个点 
+- T(t) 多边二次贝塞尔，自动计算控制点，只需要后面跟着下一个点,我的理解是会和上一个曲线的斜率一样
 - C(c) 三次贝塞尔曲线，和二次贝塞尔曲线比较，每个端点对于于一个控制点，就是一条线段有两个控制点
 - S(s) 和T作用类似，自动算出平滑曲线 
 - marker
@@ -162,7 +168,7 @@ gradient
 
 容我说两句：滤镜虽然学起来挺费劲，但是效果和css的完全filter不是一个概念。
 
-- feGaussianBlur投影，结合feOffset偏移和feMerge合并
+- feGaussianBlur投影，结合feOffset偏移和feMerge合并,其实是把图层高斯模糊
 - feColorMatrix 改变颜色
 - feImage 图片作为滤镜输入源
 - feComponentTransfer 调色
@@ -178,11 +184,23 @@ gradient
 
 **CH12 SVG动画**
 
+- \<animate\>,attributeName,attributeType,from,to,begin,dur
+- repeatCount 重复次数（indefinite为无限循环），repeatDur 持续时间， 二选一
+- calcMode 动画多个值时，持续时间比例， paced,linear,discrete,spline
+- \<set\> 简化版animate,只需要to和时间属性
+- \<animateTransform\> 适用于transform的动画
+- \<animateMotion\> 路径运动，AE即视感有木有
+- keyPoints,keyTimes
 
-
-
-
+**CH13 添加交互**
  
+- 和html使用a标签有点不一样,格式:\<a xlink:href=""\> 
+- elementID.eventName使用交互动画
+
+**CH14 使用svg dom**
+
+- snap.svg 更容易操作svg
+- window.requestAnimationFrame
 
 
 
