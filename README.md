@@ -138,13 +138,19 @@ SVG Essentials learning
 
 pattern:
 
-- patternUnits(objectBoundingBox/userSpaceOnUse)
-- patternContentUnits
+- patternUnits 分别有objectBoundingBox(object),userSpaceOnUse(user)两个值，默认值为object
+ - object: 按百分比填充对象  例如width="20%" height="20%"，就是每个tile占画布的20%
+ - user: 以相同大小平铺
+- patternContentUnits 也是和patternUnits值一样有两个，不过默认值是userSpaceOnUse
+ 
 
 gradient
 
-- linearGradient 
-- radialGradient
+- linearGradient
+ - (x1,y1) (x2,y2)决定渐变方向，默认发现是左到右
+ - stop offset 渐变位置
+ - stop color 渐变颜色
+- radialGradient 除了没有方向，其他参数和linearGradient一样，还多了个投射点(fx,fy)
 - spreadMethod 
  - pad 起始和结束渐变点会扩展到对象的边缘
  - repeat 渐变会重复起点到终点的过程
@@ -157,9 +163,9 @@ gradient
 - text-anchor(文本对齐) start/middle/end
 - tspan类似于p里面的span标签，有偏移量（dx,dy）和baseline-shift（sub,super）两个属性
 - textLength 设置文本长度 ，lengthAdjust可以调整字符间距
- - spacing 调整字符间距
- - spacingAndGlyphs 字符长度和字符间距
-- textPath 文本路径
+ - spacing 只调整字符间距
+ - spacingAndGlyphs 调整字符长度和字符间距
+- textPath 文本路径 ，startOffset可以调整开始位置
 
 **CH10 裁剪和蒙版**
 

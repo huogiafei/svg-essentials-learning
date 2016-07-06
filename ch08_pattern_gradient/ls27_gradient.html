@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gradient</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls27.css">
+    <style>
+        .gradient-block{
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(90deg,#fc1 10%, #fc1 0, #f66 90%, #f66 0);
+            padding: 50px 0;
+            background-clip: content-box;
+        }
+    </style>
 </head>
 <body>
 <!-- Refer: http://oreillymedia.github.io/svg-essentials-examples/ch08/linear_gradient.html -->
@@ -190,7 +198,7 @@
                 <rect width="70" height="70" x="110" y="50" stroke="#000" fill="url(#bg)"/>
             </svg>
         </div>
-        <p class="box-desc">objectBoundingBox / userSpaceOnUse</p>
+        <p class="box-desc">userSpaceOnUse / objectBoundingBox</p>
     </div>
 
     <div class="box">
