@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>polygon 多边形</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls9.css">
+    <style>
+        .star{
+            fill: rgba(255, 204, 17, 0.55);
+            stroke:#fc1;
+        }
+    </style>
 </head>
 <body>
+<!-- 引自SVG Essential中文版 p42
+    为了保持完整性，还是解释一下 fill-rules 的原理，但是你在使用时并不一定要知道
+    这些细节。nonzero 规则在判断某个点是否在图形内部时，从这个点画一条线到无穷
+    远，然后数这条线与图形边线有多少次交叉。如果交叉的边线是从右往左画，则总数
+    加 1；如果交叉的边线是从左往右画，则总数减 1。如果最后总数为 0，则认为该点在
+    图形外部，否则认为在图形内部。
+    evenodd 规则也画了同样一条线，但它只算与边线相交的次数。如果总数是奇数，则认
+    为点在图形内部，否则认为点在图形外部。
+ -->
 <h1 class="title">polygon</h1>
 <div class="wrap">
     <div class="box">

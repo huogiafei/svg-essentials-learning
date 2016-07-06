@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nesting</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls4.css">
 </head>
 <body>
 <h1 class="title">nesting</h1>
@@ -28,17 +27,39 @@
                 <circle cx="25" cy="25" r="24"
                         style="stroke:#fc1;stroke-width: 2px ;fill:none"></circle>
                 <rect x="90" y="120" width="20" height="80"
-                      style="stroke: #fc1; fill: none;">  </rect>
+                      style="stroke: #fc1; fill: none;"></rect>
+                <rect x="30" y="120" width="20" height="80"
+                      style="stroke: #fc1; fill: none;"></rect>
+                <rect x="150" y="120" width="20" height="80"
+                      style="stroke: #fc1; fill: none;"></rect>
 
-                    <!-- nesting -->
-                    <svg x="90px" y="120" width="20px" height="80px"
-                         viewBox="0 0 50 50" preserveAspectRatio="xMaxYMid meet">
+                <!-- nesting -->
+                <svg x="90" y="120" width="20px" height="80px"
+                     viewBox="0 0 50 50" preserveAspectRatio="xMaxYMid meet">
 
-                        <!-- nesting shape -->
-                        <circle cx="25" cy="25" r="24"
-                                style="stroke:#fc1;stroke-width: 2px ;fill:none"></circle>
+                    <!-- nesting shape -->
+                    <circle cx="25" cy="25" r="24"
+                            style="stroke:#fc1;stroke-width: 2px ;fill:none"></circle>
 
-                    </svg>
+                </svg>
+
+                <svg x="30" y="120" width="20px" height="80px"
+                     viewBox="0 0 50 50" preserveAspectRatio="xMaxYMin meet">
+
+                    <!-- nesting shape -->
+                    <circle cx="25" cy="25" r="24"
+                            style="stroke:#fc1;stroke-width: 2px ;fill:none"></circle>
+
+                </svg>
+
+                <svg x="150" y="120" width="20px" height="80px"
+                     viewBox="0 0 50 50" preserveAspectRatio="xMaxYMax meet">
+
+                    <!-- nesting shape -->
+                    <circle cx="25" cy="25" r="24"
+                            style="stroke:#fc1;stroke-width: 2px ;fill:none"></circle>
+
+                </svg>
             </svg>
         </div>
         <p class="box-desc">nesting(xMax,yMid)</p>

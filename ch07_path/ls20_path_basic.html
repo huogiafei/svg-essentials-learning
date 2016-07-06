@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>basic path:moveto lineto closepath</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls20.css">
+    <style>
+        .text{
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 8;
+            stroke:#f66;
+        }
+    </style>
 </head>
 <body>
-<h1 class="title">moveto lineto closepath</h1>
+<h1 class="title">moveto,lineto,closepath</h1>
 <div class="wrap">
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
-                <g class="pattern">
-                    <path d="M 10 10 L 30 30"></path>
+                <g class="text">
+                    <path d="M 50 40 L 50 70 "></path>
                 </g>
             </svg>
         </div>
@@ -24,8 +32,8 @@
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
-                <g class="pattern">
-                    <path d="M 50 10 L 40 30 L 60 30 L 50 10 Z"></path>
+                <g class="text">
+                    <path d="M 35 40 L 65 40 L 65 70 L 35 70 Z"></path>
                 </g>
             </svg>
         </div>
@@ -36,8 +44,8 @@
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
-                <g class="pattern">
-                    <path d="M 50 10 L 40 30 L 60 30 L 50 10 "></path>
+                <g class="text">
+                    <path d="M 50 40 L 70 70 L 30 70 L 42 52"></path>
                 </g>
             </svg>
         </div>
@@ -47,26 +55,29 @@
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
-                <g class="pattern">
-                    <path d="M 50 10 L 40 30 L 60 30 C 0 0 10 20 50 10"></path>
+                <g class="text">
+                    <path d="M 40 40 L 60 40 L 60 50 L40 50 Z"></path>
+                    <path d="M 40 60 L 60 60 L 60 70 L40 70 Z"></path>
                 </g>
             </svg>
         </div>
-        <p class="box-desc">C</p>
+        <p class="box-desc">multiple path</p>
     </div>
 
     <!-- 相对于上个点 -->
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
-                <g class="pattern">
-                    <path d="m 50 10 l 10 10 "></path>
-                    <path d="m 70 30 l -20 30 l 20 0 z"></path>
-                    <path d="m 10 10 l 20 0 l 30 70 C 0 0 10 20 10 10"></path>
+                <g class="text">
+                    <defs>
+                        <path id="line" d="M 50 30 L 50 70"></path>
+                    </defs>
+                    <use xlink:href="#line" transform="rotate(45,50,50)"></use>
+                    <use xlink:href="#line" transform="rotate(-45,50,50)"></use>
                 </g>
             </svg>
         </div>
-        <p class="box-desc">relative (m & l)</p>
+        <p class="box-desc">use + path</p>
     </div>
 </div>
 </body>

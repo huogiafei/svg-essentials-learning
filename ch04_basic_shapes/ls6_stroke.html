@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stroke 笔画</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls6.css">
+    <style>
+        .line {
+            stroke: rgba(255, 204, 17, 0.2);
+        }
+
+        .line2 {
+            stroke: yellow;
+            color: rgb(74, 181, 198);
+        }
+
+        .line-color {
+            stroke-width: 3px;
+        }
+
+        .line-opacity {
+            stroke-width: 3px;
+            stroke: #0c9
+        }
+
+        .line-dasharray {
+            stroke-width: 3px;
+            stroke: #09e
+        }
+    </style>
 </head>
 <body>
 <h1 class="title">Stroke</h1>
@@ -54,9 +77,9 @@
     <div class="box">
         <div class="card">
             <svg width="200" height="200px" viewBox="0 0 100 100">
-                <line x1="0" y1="10" x2="100" y2="10" class="line-dasharray" stroke-dasharray="10,10"></line>
-                <line x1="0" y1="30" x2="100" y2="30" class="line-dasharray" stroke-dasharray="10,20,30,10,10"></line>
-                <line x1="0" y1="50" x2="100" y2="50" class="line-dasharray" stroke-dasharray="10,20,10"></line>
+                <line x1="0" y1="10" x2="100" y2="10" class="line-dasharray" stroke-dasharray="10"></line>
+                <line x1="0" y1="30" x2="100" y2="30" class="line-dasharray" stroke-dasharray="10,20,10"></line>
+                <line x1="0" y1="50" x2="100" y2="50" class="line-dasharray" stroke-dasharray="10,20,30,10,10"></line>
             </svg>
         </div>
         <div class="box-desc">stroke-dasharray</div>

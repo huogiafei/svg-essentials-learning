@@ -5,7 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>path shortcut</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls21.css">
+    <style>
+        path{
+            fill:none;
+            stroke-width: 3px;
+        }
+
+        path:nth-child(1){
+            stroke: #fc1
+        }
+
+        path:nth-child(2){
+            stroke: #09c;
+        }
+
+        path:nth-child(3){
+            stroke: #f66;
+        }
+
+        path:nth-child(4){
+            stroke: #0c9;
+        }
+
+        .text{
+            font-size:5px;
+            fill:#ddd;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <h1 class="title">path shortcuts</h1>
@@ -14,10 +41,17 @@
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100">
                 <g class="pattern">
-                    <path d="M 10 10 H 20"></path>
-                    <path d="M 30 10 h 30"></path>
-                    <path d="M 70 10 h 10 v 20"></path>
-                    <path d="M 50 30 V 60"></path>
+
+                    <path d="M 60 10 H 90"></path>
+                    <path d="M 60 30 h 30"></path>
+                    <path d="M70 50 H90 V60"></path>
+                    <path d="M70 70 h20 v10"></path>
+
+                    <text class="text" x="10" y="10">M10 10 H20</text>
+                    <text class="text" x="10" y="30">M60 30 h30</text>
+                    <text class="text" x="10" y="50">M70 50 H90 V60</text>
+                    <text class="text" x="10" y="70">M70 70 h20 v10</text>
+
                 </g>
             </svg>
         </div>
@@ -32,7 +66,8 @@
                     <path d="M50 10 60 20 50 30 40 20 Z"></path>
 
                     <path d="m 80 10 10 10 -10 10 -10 -10 z"></path>
-                    <path d="M20 40h20v10h-20z"></path>
+                    <path d="M20 40h60v10h-60z"></path>
+                    <path d="M25 60 h 50 l -10 30 h-30 z" style="stroke: #8b5653"></path>
                 </g>
             </svg>
         </div>

@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>group and use 分组和引用</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls12.css">
+    <style>
+        .tran1{
+            transform: translate(19px,31px);
+        }
+
+        .tran2{
+            transform: translate(24px,40px);
+        }
+
+        .tran2{
+            transform:  translate(35px,31px) rotate(180deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
 </head>
 <body>
 <!-- <g> & <use> -->
@@ -44,18 +57,12 @@
             <svg width="200" height="200" viewBox="0 0 100 100">
                 <!-- init -->
                 <defs>
-                    <g id="line1">
-                        <line x1="0" y1="40" x2="20" y2="40" stroke="#fc1" stroke-width="5px"
-                              stroke-linecap="round"></line>
-                    </g>
-                    <g id="line2">
-                        <line x1="0" y1="50" x2="20" y2="50" stroke="#f66" stroke-width="5px"
-                              stroke-linecap="round"></line>
-                    </g>
-                    <g id="line3">
-                        <line x1="0" y1="60" x2="20" y2="60" stroke="#09e" stroke-width="5px"
-                              stroke-linecap="round"></line>
-                    </g>
+                    <line id="line1" x1="0" y1="40" x2="20" y2="40" stroke="#fc1" stroke-width="5px"
+                          stroke-linecap="round"></line>
+                    <line id="line2" x1="0" y1="50" x2="20" y2="50" stroke="#f66" stroke-width="5px"
+                          stroke-linecap="round"></line>
+                    <line id="line3" x1="0" y1="60" x2="20" y2="60" stroke="#09e" stroke-width="5px"
+                          stroke-linecap="round"></line>
                 </defs>
 
                 <!-- use -->
@@ -95,12 +102,11 @@
                 <circle r="30" cx="51" cy="51" fill="rgba(100,100,100,0.4)"></circle>
                 <circle r="30" cx="50" cy="50" fill="rgba(100,100,100,0.6)"></circle>
                 <circle r="30" cx="49" cy="49" fill="#f66"></circle>
-                <image xlink:href="bike.jpg" x="20" y="20" width="60" height="60" opacity="0.3" ></image>
+                <image xlink:href="bike.jpg" x="30" y="30" width="40" height="40" opacity="0.3"></image>
             </svg>
         </div>
+        <p class="box-desc">image</p>
     </div>
-
-
 
 
 </div>

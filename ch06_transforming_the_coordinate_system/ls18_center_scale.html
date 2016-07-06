@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>centering scale 围绕中心点缩放</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls18.css">
+    <style>
+        .square {
+            position: absolute;
+            color: #fc1;
+            border: 2px solid currentColor;
+            width: 42px;
+            height: 42px;
+            top: 80px;
+            left: 80px;
+            transform-origin: 0 0;
+        }
+
+        .scale {
+            transform: translate(-50%, -50%) scale(2);
+            border-width: 1px;
+        }
+
+        .scale2 {
+            transform: translate(-75%, -75%) scale(2.5);
+            border-width: 1px;
+        }
+    </style>
 </head>
 <body>
 <!-- http://oreillymedia.github.io/svg-essentials-examples/ch06/rotate.html -->
+<!--
+    translate(-centerX*(n-1), -centerY*(n-1)) scale(n)
+ -->
 <h1 class="title">centering scale</h1>
 <div class="wrap">
     <div class="box">
@@ -29,7 +53,7 @@
     </div>
 
     <div class="box">
-        <div class="card" style="width: 200px; height: 200px;position: relative;">
+        <div class="card" style="width: 201px; height: 201px;position: relative;">
             <div class="square"></div>
             <div class="square scale"></div>
             <div class="square scale2"></div>

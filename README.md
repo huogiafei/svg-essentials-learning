@@ -56,7 +56,7 @@ SVG Essentials learning
 - img
 - css(background,list-image,border-image)
 - object
-- inline svg,见一些国外网站用把svg放在symbol里通过use进行icon的复用
+- inline svg(个人推荐)
 
 **CH03 坐标系统**
 
@@ -81,9 +81,10 @@ SVG Essentials learning
 - ellipse (cx,cy,rx,ry) 跟circle基本一样，除了r分成了rx和ry
 - polygon (xi,yi) 一系列的x/y坐标，最后会自动回到起始坐标
 - fill-rule填充规则，nonzero(default)/evenodd
-- polygon折线 ，和polygon的区别在于不闭合为形状
+- polyline 折线 ，和polygon的区别在于不闭合为形状
 - stroke-linecap线的端点，三个值分别为square,round,butt,前两者在端点位置增加一个形状
 - stroke-linejoin 折线位置的形状，有三个值为miter(尖)，round(圆),bevel(平)
+- stroke-miterlimit 斜切长度除以线段宽度
 
 **CH05 文档解构**
 
@@ -100,13 +101,14 @@ SVG Essentials learning
 
 **CH06 坐标系统变换**
 
-- translate 移动整个坐标系统，和x='10',y='10'这种单独移动画布里元素不一样
+- translate 移动整个坐标系统，和x='10',y='10'单独移动元素不一样
 - scale 坐标系统缩放，所以会影响元素的坐标和stroke-width
-- transform order 这点和css一样，各种变换的顺序会影响最后变换效果
+- transform order 这点和css一样，变换的顺序会影响变换效果
 - 笛卡尔坐标变换 水平翻转和垂直翻转，同样适用css transform
 - rotate 默认旋转中心为0,0,rotate(deg,50,50)可以围绕中心点旋转
 - 围绕中心点缩放 ,translate(-centerX*(n-1), -centerY*(n-1)) scale(n)
 - skewX/skewY
+- Transform Matrix
 
 **CH07 路径**
 
@@ -122,9 +124,9 @@ SVG Essentials learning
  - x轴旋转角度
  - 圆弧角度大于180度，为0,小于180度，为1
  - 负角度绘制为0 ，正角度为1，我的理解是顺/逆时针
- - 终点X y
+ - 终点x,y
 - Q(q) 二次贝塞尔曲线,(Q hx hy,ex,ey),Q后面跟着一个控制点和下一个点
-- T(t) 多边二次贝塞尔，自动计算控制点，只需要后面跟着下一个点,我的理解是会和上一个曲线的斜率一样
+- T(t) 多边二次贝塞尔，自动计算控制点，只需要后面跟着下一个点,我的理解是和上一个曲线的斜率一样
 - C(c) 三次贝塞尔曲线，和二次贝塞尔曲线比较，每个端点对于于一个控制点，就是一条线段有两个控制点
 - S(s) 和T作用类似，自动算出平滑曲线 
 - marker

@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>path and fill</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/ls24.css">
+    <style>
+        .path {
+            fill: rgba(255, 255, 255, 0.5);
+            marker-start: url(#arrow);
+            marker-end: url(#arrow);
+            stroke: #fc1;
+            stroke-width: 3;
+        }
+    </style>
 </head>
 <body>
 <h1 class="title">Path and fill</h1>
 <div class="wrap">
     <div class="box">
         <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="evenodd" fill="rgba(255,255,255,0.2)">
-                <path d="m10 10h80v80h-80v-80 z m30 30h40v40h-40v-40 z" style="fill:rgba(255,255,255,0.5)"></path>
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="evenodd" class="path">
+                <path d="m10 10h80v80h-80v-80 z m30 30h40v40h-40v-40 z"></path>
             </svg>
         </div>
         <p class="box-desc">same dir + fill-rule : evenodd</p>
@@ -22,7 +30,7 @@
     <div class="box">
         <div class="card">
             <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="nonzero" style="fill:rgba(255,255,255,0.2)">
-                <path d="m10 10h80v80h-80v-80 z m30 30h40v40h-40v-40 z" style="fill:rgba(255,255,255,0.5)"></path>
+                <path d="m10 10h80v80h-80v-80 z m30 30h40v40h-40v-40 z" class="path"></path>
             </svg>
         </div>
         <p class="box-desc">same dir + fill-rule : nonzero</p>
@@ -30,8 +38,8 @@
 
     <div class="box">
         <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="evenodd" fill="rgba(255,255,255,0.2)">
-                <path d="m10 10h80v80h-80v-80 z m30 30 v40h40v-40h-30 z" style="fill:rgba(255,255,255,0.5)"></path>
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="evenodd">
+                <path d="m10 10h80v80h-80v-80 z m30 30 v40h40v-40h-30 z" class="path" style="marker-end: url(#arrowReverse)"></path>
             </svg>
         </div>
         <p class="box-desc">contrast dir + fill-rule : evenodd</p>
@@ -39,12 +47,23 @@
 
     <div class="box">
         <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="nonzero" fill="rgba(255,255,255,0.2)">
-                <path d="m10 10h80v80h-80v-80 z m30 30 v40h40v-40h-30 z" style="fill:rgba(255,255,255,0.5)"></path>
+            <svg width="200" height="200" viewBox="0 0 100 100" fill-rule="nonzero" >
+                <path d="m10 10h80v80h-80v-80 z m30 30 v40h40v-40h-30 z" class="path" style="marker-end: url(#arrowReverse)"></path>
             </svg>
         </div>
         <p class="box-desc">contrast dir + fill-rule : evenodd</p>
     </div>
 </div>
+
+<svg width="0" height="0">
+    <marker id="arrow" markerWidth="3" markerHeight="3" refX="-5" refY="5" viewBox="0 0 10 10" orient="auto">
+        <path id="arrowPath" d="m1 2 L 8 5 L 1 8" style="stroke-width: 2px;stroke-linejoin: round;stroke-linecap: round" fill="none"
+              stroke="#ff7f00"></path>
+    </marker>
+    <marker id="arrowReverse" markerWidth="3" markerHeight="3" refX="-5" refY="5" viewBox="0 0 10 10" orient="auto">
+        <use xlink:href="#arrowPath" transform="translate(10,0) scale(-1,1)"></use>
+    </marker>
+
+</svg>
 </body>
 </html>
