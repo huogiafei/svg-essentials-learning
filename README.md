@@ -176,7 +176,7 @@ gradient
 
 容我说两句：滤镜虽然学起来挺费劲，但是效果和css的完全filter不是一个概念。
 
-- feGaussianBlur投影，结合feOffset偏移和feMerge合并,其实是把图层高斯模糊
+- feGaussianBlur高斯模糊，stdDeviation参数和模糊程度成正比，结合feOffset偏移和feMerge合并制造阴影效果
 - feColorMatrix 改变颜色
 - feImage 图片作为滤镜输入源
 - feComponentTransfer 调色
@@ -192,13 +192,18 @@ gradient
 
 **CH12 SVG动画**
 
-- \<animate\>,attributeName,attributeType,from,to,begin,dur
+- animate,attributeName,attributeType,from,to,begin,dur
 - repeatCount 重复次数（indefinite为无限循环），repeatDur 持续时间， 二选一
 - calcMode 动画多个值时，持续时间比例， paced,linear,discrete,spline
-- \<set\> 简化版animate,只需要to和时间属性
-- \<animateTransform\> 适用于transform的动画
-- \<animateMotion\> 路径运动，AE即视感有木有
-- keyPoints,keyTimes
+- set 简化版animate,只需要to和时间属性
+- animateTransform 适用于transform的动画
+- animateMotion 路径运动，AE即视感有木有
+- keyTimes 动画时间，
+ - 若干个0~1的浮点数
+ - 后面的值一定大于前面
+ - 和values的值数量一样
+ - 使用了linear 和 discrete,keyTimes第一个值为0
+ - 使用了from和to,indefinite被忽略
 
 **CH13 添加交互**
  

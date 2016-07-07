@@ -6,7 +6,7 @@
     <title>Animation complex attributes & multiple values</title>
     <link rel="stylesheet" href="../css/common.css">
     <style>
-        .line-shape{
+        .line-shape {
             stroke: #fc1;
             fill: none;
             stroke-linejoin: round;
@@ -32,7 +32,7 @@
                     </animate>
                     <!-- values -->
                     <animate id="a8" attributeName="fill"
-                             values="#000;#fff;#000" begin="a6.end" dur="6s"  fill="remove" repeatCount="indefinite">
+                             values="#000;#fff;#000" begin="a6.end" dur="6s" fill="remove" repeatCount="indefinite">
                     </animate>
                 </polygon>
                 <polygon points="50,90 70,70 90,50 50,50 10,50 30,70 z" class="line-shape">
@@ -41,28 +41,75 @@
                     </animate>
                     <!-- values -->
                     <animate id="a7" attributeName="fill"
-                             values="#000;#fff;#000" begin="a6.end" dur="6s"  fill="remove" repeatCount="indefinite">
+                             values="#000;#fff;#000" begin="a6.end" dur="6s" fill="remove" repeatCount="indefinite">
                     </animate>
                 </polygon>
 
                 <circle r="0" cx="50" cy="50" class="line-shape">
-                    <animate id="a3" attributeName="r" attributeType="XML" to="10" begin="a2.end - 1s" dur="1s" fill="freeze"></animate>
+                    <animate id="a3" attributeName="r" attributeType="XML" to="10" begin="a2.end - 1s" dur="1s"
+                             fill="freeze"></animate>
                 </circle>
 
                 <circle r="6" cx="50" cy="50" style="fill: #f66;fill-opacity: 0">
-                    <animate id="a6" attributeName="fill-opacity" attributeType="XML" to="1" begin="a4.end" dur="1s" fill="freeze"></animate>
+                    <animate id="a6" attributeName="fill-opacity" attributeType="XML" to="1" begin="a4.end" dur="1s"
+                             fill="freeze"></animate>
                 </circle>
 
-                <polygon points="50,10 70,50 50,90 30,50 z" style="stroke-width: 2;stroke-opacity: 0;stroke:#0c9;fill: none">
-                    <animate id="a5" attributeName="stroke-opacity" attributeType="XML" to="0.6" begin="a2.end - 2s" dur="1s" fill="freeze"></animate>
+                <polygon points="50,10 70,50 50,90 30,50 z"
+                         style="stroke-width: 2;stroke-opacity: 0;stroke:#0c9;fill: none">
+                    <animate id="a5" attributeName="stroke-opacity" attributeType="XML" to="0.6" begin="a2.end - 2s"
+                             dur="1s" fill="freeze"></animate>
                 </polygon>
 
-                <polygon points="50,10 90,50 50,90 10,50 z" style="stroke-width: 2;stroke-opacity: 0;stroke:#09e;fill: none">
-                    <animate id="a4" attributeName="stroke-opacity" attributeType="XML" to="0.6" begin="a2.end - 2.5s" dur="1s" fill="freeze"></animate>
+                <polygon points="50,10 90,50 50,90 10,50 z"
+                         style="stroke-width: 2;stroke-opacity: 0;stroke:#09e;fill: none">
+                    <animate id="a4" attributeName="stroke-opacity" attributeType="XML" to="0.6" begin="a2.end - 2.5s"
+                             dur="1s" fill="freeze"></animate>
                 </polygon>
             </svg>
         </div>
         <p class="box-desc">complex attributes & multiple values</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+                <rect width="20" height="20" x="40" y="40" fill="#f66" rx="2" ry="2">
+                    <animateTransform attributeName="transform" dur="2s" type="translate" from="0,0" to="-100,-100"
+                                      repeatCount="indefinite" additive="sum"/>
+                    <animateTransform attributeName="transform" dur="2s" type="scale" from="1" to="3"
+                                      repeatCount="indefinite" additive="sum"/>
+                    <animateTransform attributeName="transform" dur="2s" type="rotate" from="0,50,50" to="360,50,50"
+                                      repeatCount="indefinite" additive="sum"/>
+                </rect>
+            </svg>
+        </div>
+        <p class="box-desc">transform additive</p>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+
+
+                <rect x="40" y="40" width="20" height="20" fill="#f66" transform="translate(-50,-50)">
+                    <animateTransform attributeName="transform" dur="2s"
+                                      type="scale" from="1" to="1.5" repeatCount='5' accumulate="none" fill="freeze">
+                    </animateTransform>
+                </rect>
+
+                <rect x="10" y="10" width="10" height="10" fill="#09e">
+                    <animateTransform attributeName="transform" dur="2s"
+                                      type="translate" from="0,0" to="-4,-4" repeatCount='5' accumulate="sum" >
+                    </animateTransform>
+                    <animateTransform attributeName="transform" dur="2s"
+                                      type="scale" from="1" to="1.2" repeatCount='5' accumulate="sum" >
+                    </animateTransform>
+
+                </rect>
+            </svg>
+        </div>
+        <p class="box-desc">accumulate</p>
     </div>
 </div>
 </body>

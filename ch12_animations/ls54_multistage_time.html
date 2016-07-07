@@ -12,61 +12,144 @@
             stroke-linejoin: round;
             stroke-width: 2;
         }
+
+        .text {
+            fill: currentColor;
+            font-size: 6px;
+            font-weight: bold;
+        }
+
+        .time {
+            fill: #999;
+        }
+
+        .time tspan {
+            fill: currentColor;
+        }
+
+        .time-total {
+            font-size: 8px;
+            font-weight: bold;
+            fill: #ccc;
+            text-anchor: middle;
+        }
+
+        .line {
+            stroke-linecap: round;
+            stroke-width: 2;
+            stroke: currentColor;
+        }
+
     </style>
 </head>
 <body>
 <h1 class="title">multistage time</h1>
-<div class="wrap">
-    <div class="box">
-        <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100">
-                <polyline points="10,10 30,10" style="stroke: #0c9;stroke-width: 2">
-                    <animate id="a1" attributeName="points"
-                             values="10,10 40,10;10,10 90,10" begin="0s" dur="3s" keyTimes="3s;1s" fill="freeze"
-                             calcMode="paced">
-                    </animate>
-                </polyline>
-            </svg>
-        </div>
-        <p class="box-desc">paced</p>
-    </div>
+<!-- calcMode: linear(default),discrete,paced,spline -->
 
+<div class="wrap">
+    <!-- linear -->
     <div class="box">
         <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100">
-                <polyline points="10,10 30,10" style="stroke: #0c9;stroke-width: 2">
-                    <animate id="a1" attributeName="points"
-                             values="10,10 40,10;10,10 90,10" begin="0s" dur="3s" keyTimes="3s;1s" fill="freeze"
-                             calcMode="linear">
+            <svg width="200" height="200" viewBox="0 0 100 100" style="color:#0c9">
+                <line x1="10" y1="40" x2="11" y2="40" class="line">
+                    <animate id="a1" attributeName="x2"
+                             values="11;30;90" dur="2s" fill="freeze" calcMode="linear">
                     </animate>
-                </polyline>
+                </line>
+                <text class="text" y="50">
+                    <tspan x="6">10</tspan>
+                    <tspan x="26">30</tspan>
+                    <tspan x="86">90</tspan>
+                    <tspan class="time" x="16">1s</tspan>
+                    <tspan class="time" x="56">1s</tspan>
+                    <tspan class="time-total" x="50" y="70">dur:2s</tspan>
+                </text>
             </svg>
         </div>
         <p class="box-desc">linear</p>
     </div>
 
-
+    <!-- linear(keyTimes) -->
     <div class="box">
         <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100">
-                <text x="10" y="50" style="fill: #fc1">hello
-                    <animate attributeName="x" dur="5s" values="0; 20; 60" keyTimes="0; .8; 1"  calcMode="spline" keySplines=".5 0 .5 1; 0 0 1 1" />
+            <svg width="200" height="200" viewBox="0 0 100 100" style="color:#0c9">
+                <line x1="10" y1="40" x2="11" y2="40" class="line">
+                    <animate id="a2" attributeName="x2"
+                             values="11;30;90" dur="2s" fill="freeze" calcMode="linear" keyTimes="0;0.9;1">
+                    </animate>
+                </line>
+                <text class="text" y="50">
+                    <tspan x="6">10</tspan>
+                    <tspan x="26">30</tspan>
+                    <tspan x="86">90</tspan>
+                    <tspan class="time" x="16">0.9</tspan>
+                    <tspan class="time" x="56">0.1</tspan>
+                    <tspan class="time-total" x="50" y="70">dur:2s</tspan>
                 </text>
             </svg>
         </div>
-        <p class="box-desc">spline</p>
+        <p class="box-desc">linear(keyTimes:0;0.9;1)</p>
     </div>
 
-
+    <!-- paced -->
     <div class="box">
         <div class="card">
-            <svg width="200" height="200" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="10" style="stroke: #fc1">hello
-                    <animate attributeName="r" dur="5s" values="0,20;0" keyTimes="0; .7; 1"  calcMode="discrete"  />
-                </circle>
+            <svg width="200" height="200" viewBox="0 0 100 100" style="color:#09e">
+                <line x1="10" y1="40" x2="11" y2="40" class="line">
+                    <animate id="a3" attributeName="x2"
+                             values="11;30;90" dur="2s" fill="freeze" calcMode="paced">
+                    </animate>
+                </line>
+                <text class="text" y="50">
+                    <tspan x="6">10</tspan>
+                    <tspan x="26">30</tspan>
+                    <tspan x="86">90</tspan>
+                    <tspan class="time-total" x="50" y="70">dur:2s</tspan>
+                </text>
+            </svg>
+        </div>
+        <p class="box-desc">paced</p>
+    </div>
+
+    <!-- discrete  -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" style="color:#fc1">
+                <line x1="10" y1="40" x2="11" y2="40" class="line">
+                    <animate id="a3" attributeName="x2"
+                             values="11;30;90" dur="2s" fill="freeze" calcMode="discrete" keyTimes="0;0.9;1">
+                    </animate>
+                </line>
+                <text class="text" y="50">
+                    <tspan x="6">10</tspan>
+                    <tspan x="26">30</tspan>
+                    <tspan x="86">90</tspan>
+                    <tspan class="time-total" x="50" y="70">dur:2s</tspan>
+                </text>
             </svg>
         </div>
         <p class="box-desc">discrete</p>
+    </div>
+
+    <!-- spline   -->
+    <div class="box">
+        <div class="card">
+            <svg width="200" height="200" viewBox="0 0 100 100" style="color:#f66">
+                <line x1="10" y1="40" x2="11" y2="40" class="line">
+                    <animate id="a3" attributeName="x2"
+                             values="11;50;90" dur="2s" fill="freeze" calcMode="spline"
+                             keyTimes="0;0.5;1" keySplines=".58,.24,.82,.51; .22,.58,.41,.8">
+                    </animate>
+                </line>
+                <text class="text" y="50">
+                    <tspan x="6">10</tspan>
+                    <tspan x="46">50</tspan>
+                    <tspan x="86">90</tspan>
+                    <tspan class="time-total" x="50" y="70">dur:2s</tspan>
+                </text>
+            </svg>
+        </div>
+        <p class="box-desc">spline(ease-in-out)</p>
     </div>
 
 </div>
