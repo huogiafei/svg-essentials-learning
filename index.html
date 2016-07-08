@@ -1,42 +1,331 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Svg-essentials-learning by huogiafei</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Svg-essentials-learning</h1>
-        <p class="header">SVG Essentials 2nd Edition learning</p>
+    <section class="page-header">
+      <h1 class="project-name">Svg-essentials-learning</h1>
+      <h2 class="project-tagline">SVG Essentials 2nd Edition learning</h2>
+      <a href="https://github.com/huogiafei/svg-essentials-learning" class="btn">View on GitHub</a>
+      <a href="https://github.com/huogiafei/svg-essentials-learning/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/huogiafei/svg-essentials-learning/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/huogiafei/svg-essentials-learning/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/huogiafei/svg-essentials-learning/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/huogiafei/svg-essentials-learning">View On GitHub</a></li>
-        </ul>
+    <section class="main-content">
+      <h1>
+<a id="svg-essentials-learning" class="anchor" href="#svg-essentials-learning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SVG Essentials learning</h1>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/huogiafei">huogiafei</a></p>
+<h4>
+<a id="本来还想说一鼓作气先看完这本书再开始写这篇markdown的没想到看到svg滤镜这一章我整个人都方了莫慌先给自己回回血" class="anchor" href="#%E6%9C%AC%E6%9D%A5%E8%BF%98%E6%83%B3%E8%AF%B4%E4%B8%80%E9%BC%93%E4%BD%9C%E6%B0%94%E5%85%88%E7%9C%8B%E5%AE%8C%E8%BF%99%E6%9C%AC%E4%B9%A6%E5%86%8D%E5%BC%80%E5%A7%8B%E5%86%99%E8%BF%99%E7%AF%87markdown%E7%9A%84%E6%B2%A1%E6%83%B3%E5%88%B0%E7%9C%8B%E5%88%B0svg%E6%BB%A4%E9%95%9C%E8%BF%99%E4%B8%80%E7%AB%A0%E6%88%91%E6%95%B4%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%96%B9%E4%BA%86%E8%8E%AB%E6%85%8C%E5%85%88%E7%BB%99%E8%87%AA%E5%B7%B1%E5%9B%9E%E5%9B%9E%E8%A1%80" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>　　本来还想说一鼓作气先看完这本书再开始写这篇markdown的，没想到看到svg滤镜这一章，我整个人都方了，莫慌，先给自己回回血。</h4>
 
+<hr>
 
-      </header>
-      <section>
-        <p><a href="https://github.com/huogiafei/svg-essentials-learning/blob/master/ch14_svg_dom/ls66_clock_with_snap.html">clock</a></p>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+<p><strong>long long ago(此处可略过)</strong></p>
+
+<p>　　其实最早知道svg这回事是在icomoon.io上面，才发现矢量图标的强大，到后来在codrops接触到狂拽炫酷diao炸天的svg animation，
+还有D3.js，那时候只想说一句：“教练，我要学svg”。那都已经是1年前的事情，而且发现国内的资料太少了，所以就有了这本书的读后感，还有
+分享一些个人觉得不错的svg学习资料。</p>
+
+<ul>
+<li><a href="http://www.oxxostudio.tw/articles/201410/svg-tutorial.html">oxxo studio</a></li>
+<li><a href="http://www.zhangxinxu.com/">张鑫旭</a></li>
+<li><a href="http://www.w3cplus.com/blog/tags/411.html">W3cplus</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial">MDN SVG</a></li>
+<li><a href="http://tutorials.jenkov.com/svg/index.html">jenkov SVG Tutorial</a></li>
+<li><a href="https://www.w3.org/TR/SVG/Overview.html">W3C SVG</a></li>
+</ul>
+
+<p>　　虽然这本SVG Essential比起CSS Secrets是差了那么一点（最想吐槽就是书上的demo），但是内容方面还是挺全面的，svg入门看还是非常合适的，
+咬咬牙，为了snap和D3,豁出去了。</p>
+
+<p><strong>SVG书籍</strong></p>
+
+<ul>
+<li>
+<a href="http://shop.oreilly.com/product/0636920043072.do">SVG Text Layout</a> </li>
+<li>
+<a href="http://shop.oreilly.com/product/0636920043065.do">SVG Colors, Patterns &amp; Gradients</a> （正在翻译）</li>
+<li><a href="http://www.ituring.com.cn/book/1126">数据可视化实战：使用D3设计交互式图表</a></li>
+</ul>
+
+<p><strong>SVG工具</strong></p>
+
+<ul>
+<li><a href="http://vectorpaint.yaks.co.nz/">vector paint</a></li>
+<li>
+<a href="http://editor.method.ac/">http://editor.method.ac/</a> 强大在线svg Editor</li>
+<li>
+<a href="http://jxnblk.com/paths/">svg path</a> 学习path的时候用得上</li>
+<li>
+<a href="https://jakearchibald.github.io/svgomg/">svgomg</a> SVGO的在线编辑</li>
+<li>AI,Inkscape </li>
+</ul>
+
+<p><strong>SVG框架</strong></p>
+
+<ul>
+<li>
+<a href="http://snapsvg.io/">snap.svg</a> SVG动画框架，也是我最想学的</li>
+<li>
+<a href="https://d3js.org/">D3.js</a> SVG视觉图表框架，给我感觉就是高大上</li>
+</ul>
+
+<hr>
+
+<p><strong>CH01 入门指南</strong></p>
+
+<p>　　这章主要介绍了svg的背景和用途，把基本的形状和元素都介绍了一遍，可能刚刚看完css secrets，给我感觉就是积木（bg-image）和一盘围棋的感觉（路径）</p>
+
+<p><strong>CH02 使用SVG</strong></p>
+
+<p>　　介绍了使用svg的四种方法:</p>
+
+<ul>
+<li>img</li>
+<li>css(background,list-image,border-image)</li>
+<li>object</li>
+<li>inline svg(个人推荐)</li>
+</ul>
+
+<p><strong>CH03 坐标系统</strong></p>
+
+<p>　　svg相当于画布，下面是一些基本属性</p>
+
+<ul>
+<li>width/height 画布的大小</li>
+<li>viewBox</li>
+<li>preserveAspectRatio,当w/h 和 viewBox 宽高比不一样，需要指定对齐方式</li>
+<li>meet/slice 同上，需要指定适配边缘还是裁剪</li>
+</ul>
+
+<p><strong>CH04 基本形状</strong></p>
+
+<ul>
+<li>line线段，需要起点和终点（x1,y1,x2,y2）</li>
+<li>fill 填充颜色</li>
+<li>fill-opacity 填充透明度</li>
+<li>stroke-width 笔尖粗细，原谅我写的接地气一点</li>
+<li>stroke 笔画颜色，注意不是stroke-color，支持rgba,rgb,hsl,hsla颜色格式，默认是none</li>
+<li>stroke-opacity 笔画透明度</li>
+<li>stroke-dasharray，实现点线、虚线（线长度，空隙长），css secrets里面还利用这个属性实现饼图</li>
+<li>rect（x,y,width,height,rx,ry）,除了必须参数起点坐标和宽高外，还可以设置rx/ry得到圆角矩形</li>
+<li>circle (cx,cy,r)，需要圆心坐标和半径</li>
+<li>ellipse (cx,cy,rx,ry) 跟circle基本一样，除了r分成了rx和ry</li>
+<li>polygon (xi,yi) 一系列的x/y坐标，最后会自动回到起始坐标</li>
+<li>fill-rule填充规则，nonzero(default)/evenodd</li>
+<li>polyline 折线 ，和polygon的区别在于不闭合为形状</li>
+<li>stroke-linecap线的端点，三个值分别为square,round,butt,前两者在端点位置增加一个形状</li>
+<li>stroke-linejoin 折线位置的形状，有三个值为miter(尖)，round(圆),bevel(平)</li>
+<li>stroke-miterlimit 斜切长度除以线段宽度</li>
+</ul>
+
+<p><strong>CH05 文档解构</strong></p>
+
+<ul>
+<li>svg中使用样式：
+
+<ul>
+<li>inline</li>
+<li>internal stylesheets</li>
+<li>external stylesheets</li>
+<li>Presentation Attributes，我的理解是直接去掉style的内联写法，不过因为优先级是最低。</li>
+</ul>
+</li>
+<li>g 把子元素作为一个组合</li>
+<li>defs 定义一个组合，只定义不显示(gradient,path,clipPath,mask,filter,marker等等)</li>
+<li>symbol 加强版defs，指定viewBox和preserveAspectRatio属性</li>
+<li>use 重用上面三个定义的图形 (xlink:href)，可以指定图形位置</li>
+<li>image 支持jpg和png</li>
+</ul>
+
+<p><strong>CH06 坐标系统变换</strong></p>
+
+<ul>
+<li>translate 移动整个坐标系统，和x='10',y='10'单独移动元素不一样</li>
+<li>scale 坐标系统缩放，所以会影响元素的坐标和stroke-width</li>
+<li>transform order 这点和css一样，变换的顺序会影响变换效果</li>
+<li>笛卡尔坐标变换 水平翻转和垂直翻转，同样适用css transform</li>
+<li>rotate 默认旋转中心为0,0,rotate(deg,50,50)可以围绕中心点旋转</li>
+<li>围绕中心点缩放 ,translate(-centerX<em>(n-1), -centerY</em>(n-1)) scale(n)</li>
+<li>skewX/skewY</li>
+<li>Transform Matrix</li>
+</ul>
+
+<p><strong>CH07 路径</strong></p>
+
+<p>　　<strong>所有基本形状都是path元素的简写形式</strong></p>
+
+<ul>
+<li>M(moveto) 起始位置 </li>
+<li>L(lineto) 连线到</li>
+<li>Z(closepath) 关闭路径</li>
+<li>m/l/z(相对位置) 其实只有l是相对于上一个坐标定位,m和z都是和大写字母的效果一样</li>
+<li>H/V(h/v) 绘制水平/垂直线，小写是相对坐标，这两个字母属于lineto的快捷方式</li>
+<li>A(a) 弧线(rx,ry,x-axis-rotation,large-arc-flag,sweep-flag,endX,endY)，解释一下7个参数：
+
+<ul>
+<li>椭圆的x轴半径和y轴半径</li>
+<li>x轴旋转角度</li>
+<li>圆弧角度大于180度，为0,小于180度，为1</li>
+<li>负角度绘制为0 ，正角度为1，我的理解是顺/逆时针</li>
+<li>终点x,y</li>
+</ul>
+</li>
+<li>Q(q) 二次贝塞尔曲线,(Q hx hy,ex,ey),Q后面跟着一个控制点和下一个点</li>
+<li>T(t) 多边二次贝塞尔，自动计算控制点，只需要后面跟着下一个点,我的理解是和上一个曲线的斜率一样</li>
+<li>C(c) 三次贝塞尔曲线，和二次贝塞尔曲线比较，每个端点对于于一个控制点，就是一条线段有两个控制点</li>
+<li>S(s) 和T作用类似，自动算出平滑曲线 </li>
+<li>marker
+
+<ul>
+<li>markerWidth/markerHeight </li>
+<li>marker-start/marker-mid/marker-end marker放置位置</li>
+<li>orient marker跟随路径方向</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>CH08 图案和渐变</strong></p>
+
+<p>pattern:</p>
+
+<ul>
+<li>patternUnits 分别有objectBoundingBox(object),userSpaceOnUse(user)两个值，默认值为object
+
+<ul>
+<li>object: 按百分比填充对象  例如width="20%" height="20%"，就是每个tile占画布的20%</li>
+<li>user: 以相同大小平铺</li>
+</ul>
+</li>
+<li>patternContentUnits 也是和patternUnits值一样有两个，不过默认值是userSpaceOnUse</li>
+</ul>
+
+<p>gradient</p>
+
+<ul>
+<li>linearGradient
+
+<ul>
+<li>(x1,y1) (x2,y2)决定渐变方向，默认发现是左到右</li>
+<li>stop offset 渐变位置</li>
+<li>stop color 渐变颜色</li>
+</ul>
+</li>
+<li>radialGradient 除了没有方向，其他参数和linearGradient一样，还多了个投射点(fx,fy)</li>
+<li>spreadMethod 
+
+<ul>
+<li>pad 起始和结束渐变点会扩展到对象的边缘</li>
+<li>repeat 渐变会重复起点到终点的过程</li>
+<li>reflect 渐变会按终点到起点、起点到终点的排列重复</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>CH09 文本</strong></p>
+
+<ul>
+<li>基本属性（和css相对应）：font-family,font-size,font-weight,font-style,text-decoration
+word-spacing,letter-spacing</li>
+<li>text-anchor(文本对齐) start/middle/end</li>
+<li>tspan类似于p里面的span标签，有偏移量（dx,dy）和baseline-shift（sub,super）两个属性</li>
+<li>textLength 设置文本长度 ，lengthAdjust可以调整字符间距
+
+<ul>
+<li>spacing 只调整字符间距</li>
+<li>spacingAndGlyphs 调整字符长度和字符间距</li>
+</ul>
+</li>
+<li>textPath 文本路径 ，startOffset可以调整开始位置</li>
+</ul>
+
+<p><strong>CH10 裁剪和蒙版</strong></p>
+
+<ul>
+<li>裁剪：clipPath ,clip-path ,clipPathUnits</li>
+<li>蒙版：mask </li>
+</ul>
+
+<p><strong>CH11 滤镜</strong></p>
+
+<p>容我说两句：滤镜虽然学起来挺费劲，但是效果和css的完全filter不是一个概念。</p>
+
+<ul>
+<li>feGaussianBlur高斯模糊，stdDeviation参数和模糊程度成正比，结合feOffset偏移和feMerge合并制造阴影效果</li>
+<li>feColorMatrix 改变颜色</li>
+<li>feImage 图片作为滤镜输入源</li>
+<li>feComponentTransfer 调色</li>
+<li>feComposite 两个输入源层叠效果</li>
+<li>feBlend </li>
+<li>feFlood 纯色填充</li>
+<li>feTile 背景填充</li>
+<li>feDiffuseLighting/feSpecularLighting 漫反射/镜面反射</li>
+<li>feMorphology 加粗减细</li>
+<li>feConvolveMatrix  模糊、锐化、浮雕和斜切效果</li>
+<li>feDisplacementMap</li>
+<li>feTurbulence纹理效果</li>
+</ul>
+
+<p><strong>CH12 SVG动画</strong></p>
+
+<ul>
+<li>animate,attributeName,attributeType,from,to,begin,dur</li>
+<li>repeatCount 重复次数（indefinite为无限循环），repeatDur 持续时间， 二选一</li>
+<li>calcMode 动画多个值时，持续时间比例， paced,linear,discrete,spline</li>
+<li>set 简化版animate,只需要to和时间属性</li>
+<li>animateTransform 适用于transform的动画</li>
+<li>animateMotion 路径运动，AE即视感有木有</li>
+<li>keyTimes 动画时间，
+
+<ul>
+<li>若干个0~1的浮点数</li>
+<li>后面的值一定大于前面</li>
+<li>和values的值数量一样</li>
+<li>使用了linear 和 discrete,keyTimes第一个值为0</li>
+<li>使用了from和to,indefinite被忽略</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>CH13 添加交互</strong></p>
+
+<ul>
+<li>和html使用a标签有点不一样,格式:&lt;a xlink:href=""&gt; </li>
+<li>elementID.eventName使用交互动画</li>
+</ul>
+
+<p><strong>CH14 使用svg dom</strong></p>
+
+<ul>
+<li>snap.svg 更容易操作svg</li>
+<li>window.requestAnimationFrame</li>
+</ul>
+
+<hr>
+
+<p><strong>一点感想</strong></p>
+
+<p>　　最初接触svg的时候，天真的以为设计师用ai做好svg给你就可以用，甚至可以做出一些炫酷的动画，工作一段时间之后才发现，这些svg什么的还是我们前端自己搞掂吧，至少在中国
+是非常缺乏的，还记得那时候我叫“美工”发我一个矢量图，打开之后还居然是糊的，我真的是身体被掏空一样。
+　　svg除了滤镜和动画那一块需要花多点功夫之外，其余的都算是比较好理解，整本书看下来再加上oxxo studio svg的教程，打个比喻就是数学老师和美术老师教你画画的感觉。虽然说
+svg是前端的一个小分支，但是未来很有前途，设计师不学，就让我们这些苦逼的FE来吧。
+　　走过这座山之后（填完这个坑），还有snap.svg 和D3.js ，想想都有点小激动(简直涕泗横流)。</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/huogiafei/svg-essentials-learning">Svg-essentials-learning</a> is maintained by <a href="https://github.com/huogiafei">huogiafei</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+    </section>
+
+  
   </body>
 </html>
