@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Mustache</title>
+    <style>
+        .mustache-wrap {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: #f1f1f1;
+        }
+
+        .mustache.icon {
+            position: absolute;
+            color: #333;
+            width: 20%;
+            height: 20%;
+            left: 50%;
+            top: 0;
+            margin-left: -10%;
+            border-radius: 50%;
+            box-shadow: -8px 20px 0 0 currentColor,
+            8px 20px 0 0 currentColor;
+        }
+
+        .mustache.icon:before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 81%;
+            border-radius: 0 0 0 100%;
+            top: 6px;
+            left: -29px;
+            border: 0 solid transparent;
+            border-bottom: 20px solid currentColor;
+            transform: rotate(-50deg);
+            transform-origin: 100% 50%;
+        }
+
+        .mustache.icon:after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 81%;
+            border-radius: 0 0 100% 0;
+            top: 6px;
+            right: -29px;
+            border: 0 solid transparent;
+            border-bottom: 20px solid currentColor;
+            transform: rotate(50deg);
+            transform-origin: 0 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="mustache-wrap">
+    <div class="mustache icon"></div>
+</div>
+</body>
+</html>

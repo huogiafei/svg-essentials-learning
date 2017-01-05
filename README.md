@@ -105,7 +105,7 @@ SVG Essentials learning
 - scale 坐标系统缩放，所以会影响元素的坐标和stroke-width
 - transform order 这点和css一样，变换的顺序会影响变换效果
 - 笛卡尔坐标变换 水平翻转和垂直翻转，同样适用css transform
-- rotate 默认旋转中心为0,0,rotate(deg,50,50)可以围绕中心点旋转
+- rotate 默认旋转中心为0,0,rotate(deg,50,50)(viewBox:0 0 100 100)可以围绕中心点旋转
 - 围绕中心点缩放 ,translate(-centerX*(n-1), -centerY*(n-1)) scale(n)
 - skewX/skewY
 - Transform Matrix
